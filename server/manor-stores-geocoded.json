@@ -1,0 +1,186 @@
+[
+  {
+    "name": "Ascona",
+    "street": "Via Ferrera",
+    "npa": "6612",
+    "city": "Ascona",
+    "lat": 46.15583801269531,
+    "lon": 8.778302192687988
+  },
+  {
+    "name": "Baden",
+    "street": "Schlossbergplatz 7",
+    "npa": "5400",
+    "city": "Baden",
+    "lat": 47.47355270385742,
+    "lon": 8.307272911071777
+  },
+  {
+    "name": "Basel",
+    "street": "Greifengasse 22",
+    "npa": "4005",
+    "city": "Basel",
+    "lat": 47.56119918823242,
+    "lon": 7.592411041259766
+  },
+  {
+    "name": "Biel/Bienne",
+    "street": "Zentralstrasse 40",
+    "npa": "2502",
+    "city": "Biel",
+    "lat": 47.137298583984375,
+    "lon": 7.246093273162842
+  },
+  {
+    "name": "Chavannes",
+    "street": "Chemin Industriel 1",
+    "npa": "1279",
+    "city": "Chavannes-de-Bogis",
+    "lat": 46.33448791503906,
+    "lon": 6.157497882843018
+  },
+  {
+    "name": "Chur",
+    "street": "Bahnhofstrasse 32",
+    "npa": "7000",
+    "city": "Chur",
+    "lat": 46.85147476196289,
+    "lon": 9.531628608703613
+  },
+  {
+    "name": "Emmen",
+    "street": "Stauffacherstrasse 1",
+    "npa": "6020",
+    "city": "Emmen",
+    "lat": 47.07314682006836,
+    "lon": 8.286376953125
+  },
+  {
+    "name": "Fribourg",
+    "street": "Rue de Romont 30",
+    "npa": "1700",
+    "city": "Fribourg",
+    "lat": 46.80409240722656,
+    "lon": 7.153934955596924
+  },
+  {
+    "name": "Genève",
+    "street": "Rue Cornavin 6",
+    "npa": "1201",
+    "city": "Genève",
+    "lat": 46.20741271972656,
+    "lon": 6.142312049865723
+  },
+  {
+    "name": "Lausanne",
+    "street": "Rue Pichard 3",
+    "npa": "1003",
+    "city": "Lausanne",
+    "lat": 46.52210235595703,
+    "lon": 6.631061553955078
+  },
+  {
+    "name": "Lugano",
+    "street": "Salita Chiattone 10",
+    "npa": "6900",
+    "city": "Lugano",
+    "lat": 46.0052604675293,
+    "lon": 8.950257301330566
+  },
+  {
+    "name": "Marin",
+    "street": "Champs-Montants 2",
+    "npa": "2074",
+    "city": "Marin-Epagnier",
+    "lat": 47.01219940185547,
+    "lon": 6.996306419372559
+  },
+  {
+    "name": "Monthey",
+    "street": "Avenue de l'Europe 21",
+    "npa": "1870",
+    "city": "Monthey",
+    "lat": 46.26067352294922,
+    "lon": 6.946890354156494
+  },
+  {
+    "name": "Morges",
+    "street": "Grand-Rue 46",
+    "npa": "1110",
+    "city": "Morges",
+    "lat": 46.51005172729492,
+    "lon": 6.49949836730957
+  },
+  {
+    "name": "Nyon",
+    "street": "Rue de la Gare 35",
+    "npa": "1260",
+    "city": "Nyon",
+    "lat": 46.38308334350586,
+    "lon": 6.236820697784424
+  },
+  {
+    "name": "Rapperswil",
+    "street": "Neue Jonastrasse 20",
+    "npa": "8640",
+    "city": "Rapperswil",
+    "lat": 47.22661209106445,
+    "lon": 8.819260597229004
+  },
+  {
+    "name": "Sargans",
+    "street": "Grossfeldstrasse",
+    "npa": "7320",
+    "city": "Sargans",
+    "lat": 47.043453216552734,
+    "lon": 9.444554328918457
+  },
+  {
+    "name": "Sierre",
+    "street": "Rue de Plantassage 24",
+    "npa": "3960",
+    "city": "Sierre",
+    "lat": 46.28251647949219,
+    "lon": 7.510913848876953
+  },
+  {
+    "name": "Sion",
+    "street": "Avenue du Midi 3",
+    "npa": "1951",
+    "city": "Sion",
+    "lat": 46.23076629638672,
+    "lon": 7.358497619628906
+  },
+  {
+    "name": "St. Gallen",
+    "street": "Waisenhausstrasse 5",
+    "npa": "9000",
+    "city": "St. Gallen",
+    "lat": 47.424217224121094,
+    "lon": 9.373394012451172
+  },
+  {
+    "name": "Vésenaz",
+    "street": "Route de Thonon 40",
+    "npa": "1222",
+    "city": "Vésenaz",
+    "lat": 46.23836898803711,
+    "lon": 6.19650936126709
+  },
+  {
+    "name": "Vevey",
+    "street": "Avenue Général-Guisan 1",
+    "npa": "1800",
+    "city": "Vevey",
+    "lat": 46.46319580078125,
+    "lon": 6.841119289398193
+  },
+  {
+    "name": "Vezia",
+    "street": "Via San Gottardo 34",
+    "npa": "6943",
+    "city": "Vezia",
+    "lat": 46.02637481689453,
+    "lon": 8.937240600585938
+  }
+]
