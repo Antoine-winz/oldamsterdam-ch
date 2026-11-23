@@ -193,7 +193,7 @@ export const translations = {
         },
         howMade: {
           q: "How is Old Amsterdam Original made?",
-          a: "Our cheese is made from pasteurized cow's milk, rennet, cultures, salt, and natural coloring. Its distinctive taste is the result of a secret family culture and a three-phase aging process, reminiscent of traditional cheese maturation methods."
+          a: "Our cheese is made from pasteurised cow's milk, salt, starter cultures, microbial rennet and a natural colour (carotenes). Its distinctive taste comes from a secret family recipe and careful ageing on wooden shelves: the cheese is matured by taste rather than by age."
         },
         agingTime: {
           q: "How long is Old Amsterdam Original aged?",
@@ -209,7 +209,7 @@ export const translations = {
         },
         buyGoudaSwitzerland: {
           q: "Where can I buy premium Gouda cheese in Switzerland?",
-          a: "Old Amsterdam, one of the world's most awarded Gouda cheeses, is now available across Switzerland at Coop and MANOR FOOD. You can find it in all major Swiss cities including Zürich, Geneva, Basel, Bern, Lausanne, Lucerne, St. Gallen, and Lugano. Choose from the Classic Wedge (210g) or convenient Slices (115g)."
+          a: "Old Amsterdam, a multi-award-winning aged Gouda, is now available across Switzerland at Coop and MANOR FOOD. You can find it in all major Swiss cities including Zürich, Geneva, Basel, Bern, Lausanne, Lucerne, St. Gallen, and Lugano. Choose from the Classic Wedge (210g) or convenient Slices (115g)."
         },
         bestGoudaSwitzerland: {
           q: "What is the best Gouda cheese available in Switzerland?",
@@ -217,7 +217,7 @@ export const translations = {
         },
         dutchGoudaVsSwiss: {
           q: "What is the difference between Dutch Gouda and Swiss-made Gouda?",
-          a: "Traditional Dutch Gouda, like Old Amsterdam, originates from the Netherlands and follows centuries-old Dutch cheesemaking traditions. Old Amsterdam uses a secret family recipe dating back to 1985, with a patented three-phase aging process on wooden shelves that produces characteristic crunchy crystals. Swiss-produced Gouda varieties are made locally. Both have their merits, but Old Amsterdam's Gold medals at the World Cheese Awards 2025 in Bern confirm its world-class quality."
+          a: "Traditional Dutch Gouda, like Old Amsterdam, originates from the Netherlands and follows centuries-old Dutch cheesemaking traditions. Old Amsterdam uses a secret family recipe dating back to 1985 and is aged on wooden shelves, which produces characteristic crunchy crystals. Swiss-produced Gouda varieties are made locally. Both have their merits, but Old Amsterdam's Gold medals at the World Cheese Awards 2025 in Bern confirm its world-class quality."
         },
         goudaVsGruyere: {
           q: "What is the difference between Gouda and Gruyère?",
@@ -225,7 +225,15 @@ export const translations = {
         },
         lactose: {
           q: "Does aged Gouda contain lactose?",
-          a: "Very little. Lactose breaks down as cheese ripens: the longer a cheese matures, the less lactose it contains. Old Amsterdam cheeses are almost lactose-free. If you have an intolerance, please check the nutrition information on the pack."
+          a: "Very little. Lactose breaks down as cheese ripens: the longer a cheese matures, the less lactose it contains. According to the manufacturer, Old Amsterdam Classic contains less than 0.01% lactose. If you have an intolerance, please check the information on the pack."
+        },
+        vegetarian: {
+          q: "Is Old Amsterdam suitable for vegetarians?",
+          a: "Yes. According to the manufacturer, all Old Amsterdam cheeses are made with microbial (vegetarian) rennet. They contain milk."
+        },
+        nutrition: {
+          q: "What are the nutritional values of Old Amsterdam?",
+          a: "Per 100 g, Old Amsterdam Classic contains about 401 kcal (1663 kJ), 33 g fat (of which 22.9 g saturates), 0 g carbohydrates, 26 g protein and 2.2 g salt, according to the manufacturer (oldamsterdam.com). Ingredients: pasteurised milk, salt, starter cultures, microbial rennet, colour (carotenes). Allergen: milk. The label on the pack is authoritative."
         },
         cheeseBoard: {
           q: "How do I create the perfect cheese board with Old Amsterdam?",
@@ -247,7 +255,7 @@ export const translations = {
     },
     cheeseExpertise: {
       title: "The Art of Aged Gouda",
-      subtitle: "What Makes Old Amsterdam the World's Most Awarded Gouda",
+      subtitle: "What Makes Old Amsterdam a Multi-Award-Winning Gouda",
       agingProcess: {
         title: "8 Months of Patient Craftsmanship",
         text: "Every wheel of Old Amsterdam is aged for an average of 8 months on traditional wooden shelves. This extended maturation period allows the cheese to develop its signature crunchy crystals — tiny clusters of concentrated flavor that burst on the palate. Unlike industrial Gouda that may be aged for just weeks, Old Amsterdam's slow, natural ripening process creates extraordinary depth and complexity."
@@ -268,7 +276,7 @@ export const translations = {
     aboutPage: {
       hero: {
         title: "About Old Amsterdam",
-        intro: "Old Amsterdam is the result of an uncompromising search for the best flavor with a focus on innovation and entrepreneurship. The Westland family presented an independent research institute with an impossible task: to develop a recipe for the most delicious mature cheese. A cheese with cheese crystals and a sharp flavor that is still smooth and easy to cut. This resulted in a patented process that combined international expertise with that typical Dutch down-to-earthness.",
+        intro: "Old Amsterdam is the result of an uncompromising search for the best flavor with a focus on innovation and entrepreneurship. The Westland family presented an independent research institute with an impossible task: to develop a recipe for the most delicious mature cheese. A cheese with cheese crystals and a sharp flavor that is still smooth and easy to cut. This resulted in a unique process that combined international expertise with that typical Dutch down-to-earthness.",
         tagline: "Flavor, as we like it."
       },
       howItBegan: {
@@ -507,7 +515,7 @@ export const translations = {
         },
         howMade: {
           q: "Comment Old Amsterdam Original est-il fabriqué?",
-          a: "Notre fromage est fabriqué à partir de lait de vache pasteurisé, de présure, de cultures, de sel et de colorant naturel. Son goût distinctif est le résultat d'une culture familiale secrète et d'un processus d'affinage en trois phases."
+          a: "Notre fromage est fabriqué à partir de lait de vache pasteurisé, de sel, de ferments, de présure microbienne et d'un colorant naturel (carotènes). Son goût distinctif vient d'une recette familiale secrète et d'un affinage soigné sur des étagères en bois : le fromage est affiné au goût, et non à l'âge."
         },
         agingTime: {
           q: "Combien de temps Old Amsterdam Original est-il affiné?",
@@ -523,7 +531,7 @@ export const translations = {
         },
         buyGoudaSwitzerland: {
           q: "Où acheter du fromage Gouda premium en Suisse?",
-          a: "Old Amsterdam, l'un des Gouda les plus primés au monde, est désormais disponible dans toute la Suisse chez Coop et MANOR FOOD. Vous le trouverez dans toutes les grandes villes suisses, notamment Genève, Lausanne, Zurich, Bâle, Berne, Lucerne, Fribourg et Lugano. Choisissez entre la Pointe Classique (210g) ou les Tranches pratiques (115g)."
+          a: "Old Amsterdam, un Gouda affiné plusieurs fois primé, est désormais disponible dans toute la Suisse chez Coop et MANOR FOOD. Vous le trouverez dans toutes les grandes villes suisses, notamment Genève, Lausanne, Zurich, Bâle, Berne, Lucerne, Fribourg et Lugano. Choisissez entre la Pointe Classique (210g) ou les Tranches pratiques (115g)."
         },
         bestGoudaSwitzerland: {
           q: "Quel est le meilleur fromage Gouda disponible en Suisse?",
@@ -531,7 +539,7 @@ export const translations = {
         },
         dutchGoudaVsSwiss: {
           q: "Quelle est la différence entre le Gouda hollandais et le Gouda suisse?",
-          a: "Le Gouda hollandais traditionnel, comme Old Amsterdam, est originaire des Pays-Bas et suit des traditions fromagères séculaires. Old Amsterdam utilise une recette familiale secrète datant de 1985, avec un processus d'affinage breveté en trois phases sur des étagères en bois qui produit des cristaux croquants caractéristiques. Les variétés de Gouda suisses sont produites localement. Les deux ont leurs mérites, mais les médailles d'Or d'Old Amsterdam aux World Cheese Awards 2025 à Berne confirment sa qualité mondiale."
+          a: "Le Gouda hollandais traditionnel, comme Old Amsterdam, est originaire des Pays-Bas et suit des traditions fromagères séculaires. Old Amsterdam utilise une recette familiale secrète datant de 1985 et un affinage sur des étagères en bois qui produit des cristaux croquants caractéristiques. Les variétés de Gouda suisses sont produites localement. Les deux ont leurs mérites, mais les médailles d'Or d'Old Amsterdam aux World Cheese Awards 2025 à Berne confirment sa qualité mondiale."
         },
         goudaVsGruyere: {
           q: "Quelle est la différence entre le Gouda et le Gruyère?",
@@ -539,7 +547,15 @@ export const translations = {
         },
         lactose: {
           q: "Le Gouda affiné contient-il du lactose?",
-          a: "Très peu. Le lactose se dégrade pendant l'affinage : plus un fromage mûrit, moins il en contient. Les fromages Old Amsterdam sont presque sans lactose. En cas d'intolérance, vérifiez les informations nutritionnelles sur l'emballage."
+          a: "Très peu. Le lactose se dégrade pendant l'affinage : plus un fromage mûrit, moins il en contient. Selon le fabricant, Old Amsterdam Classic contient moins de 0,01 % de lactose. En cas d'intolérance, vérifiez les informations sur l'emballage."
+        },
+        vegetarian: {
+          q: "Old Amsterdam convient-il aux végétariens?",
+          a: "Oui. Selon le fabricant, tous les fromages Old Amsterdam sont fabriqués avec une présure microbienne (végétarienne). Ils contiennent du lait."
+        },
+        nutrition: {
+          q: "Quelles sont les valeurs nutritionnelles d'Old Amsterdam?",
+          a: "Pour 100 g, Old Amsterdam Classic contient environ 401 kcal (1663 kJ), 33 g de matières grasses (dont 22,9 g d'acides gras saturés), 0 g de glucides, 26 g de protéines et 2,2 g de sel, selon le fabricant (oldamsterdam.com). Ingrédients : lait pasteurisé, sel, ferments, présure microbienne, colorant (carotènes). Allergène : lait. L'étiquette de l'emballage fait foi."
         },
         cheeseBoard: {
           q: "Comment créer le plateau de fromage parfait avec Old Amsterdam?",
@@ -561,7 +577,7 @@ export const translations = {
     },
     cheeseExpertise: {
       title: "L'Art du Gouda Affiné",
-      subtitle: "Ce qui fait d'Old Amsterdam le Gouda le plus primé au monde",
+      subtitle: "Ce qui fait d'Old Amsterdam un Gouda plusieurs fois primé",
       agingProcess: {
         title: "8 Mois de Patience Artisanale",
         text: "Chaque meule d'Old Amsterdam est affinée pendant 8 mois en moyenne sur des étagères en bois traditionnelles. Cette période de maturation prolongée permet au fromage de développer ses cristaux croquants caractéristiques — de petits concentrés de saveur qui éclatent en bouche. Contrairement au Gouda industriel qui peut n'être affiné que quelques semaines, le processus de maturation lent et naturel d'Old Amsterdam crée une profondeur et une complexité extraordinaires."
@@ -821,7 +837,7 @@ export const translations = {
         },
         howMade: {
           q: "Wie wird Old Amsterdam Original hergestellt?",
-          a: "Unser Käse wird aus pasteurisierter Kuhmilch, Lab, Kulturen, Salz und natürlicher Färbung hergestellt. Sein unverwechselbarer Geschmack ist das Ergebnis einer geheimen Familienkultur und eines dreiphasigen Reifeprozesses."
+          a: "Unser Käse wird aus pasteurisierter Kuhmilch, Salz, Starterkulturen, mikrobiellem Lab und einem natürlichen Farbstoff (Carotine) hergestellt. Sein unverwechselbarer Geschmack entsteht durch ein geheimes Familienrezept und die sorgfältige Reifung auf Holzregalen: Der Käse reift nach Geschmack, nicht nach Alter."
         },
         agingTime: {
           q: "Wie lange wird Old Amsterdam Original gereift?",
@@ -837,7 +853,7 @@ export const translations = {
         },
         buyGoudaSwitzerland: {
           q: "Wo kann ich Premium-Gouda-Käse in der Schweiz kaufen?",
-          a: "Old Amsterdam, einer der weltweit am meisten ausgezeichneten Gouda-Käse, ist ab sofort schweizweit bei Coop und MANOR FOOD erhältlich. Sie finden ihn in allen grossen Schweizer Städten, darunter Zürich, Genf, Basel, Bern, Lausanne, Luzern, St. Gallen und Lugano. Wählen Sie zwischen dem Classic Keil (210g) oder den praktischen Scheiben (115g)."
+          a: "Old Amsterdam, ein mehrfach ausgezeichneter gereifter Gouda, ist ab sofort schweizweit bei Coop und MANOR FOOD erhältlich. Sie finden ihn in allen grossen Schweizer Städten, darunter Zürich, Genf, Basel, Bern, Lausanne, Luzern, St. Gallen und Lugano. Wählen Sie zwischen dem Classic Keil (210g) oder den praktischen Scheiben (115g)."
         },
         bestGoudaSwitzerland: {
           q: "Was ist der beste Gouda-Käse in der Schweiz?",
@@ -845,7 +861,7 @@ export const translations = {
         },
         dutchGoudaVsSwiss: {
           q: "Was ist der Unterschied zwischen holländischem Gouda und Schweizer Gouda?",
-          a: "Traditioneller holländischer Gouda, wie Old Amsterdam, stammt aus den Niederlanden und folgt jahrhundertealten holländischen Käsereitraditionen. Old Amsterdam verwendet ein geheimes Familienrezept aus dem Jahr 1985 mit einem patentierten dreiphasigen Reifeprozess auf Holzregalen, der charakteristische knusprige Kristalle erzeugt. Schweizer Gouda-Varianten werden lokal hergestellt. Beide haben ihre Vorzüge, aber die Goldmedaillen von Old Amsterdam bei den World Cheese Awards 2025 in Bern bestätigen seine Weltklasse-Qualität."
+          a: "Traditioneller holländischer Gouda, wie Old Amsterdam, stammt aus den Niederlanden und folgt jahrhundertealten holländischen Käsereitraditionen. Old Amsterdam verwendet ein geheimes Familienrezept aus dem Jahr 1985 und reift auf Holzregalen, was die charakteristischen knusprigen Kristalle erzeugt. Schweizer Gouda-Varianten werden lokal hergestellt. Beide haben ihre Vorzüge, aber die Goldmedaillen von Old Amsterdam bei den World Cheese Awards 2025 in Bern bestätigen seine Weltklasse-Qualität."
         },
         goudaVsGruyere: {
           q: "Was ist der Unterschied zwischen Gouda und Gruyère?",
@@ -853,7 +869,15 @@ export const translations = {
         },
         lactose: {
           q: "Enthält gereifter Gouda Laktose?",
-          a: "Sehr wenig. Laktose wird während der Reifung abgebaut: Je länger ein Käse reift, desto weniger Laktose enthält er. Die Käse von Old Amsterdam sind nahezu laktosefrei. Bei einer Unverträglichkeit beachten Sie bitte die Nährwertangaben auf der Verpackung."
+          a: "Sehr wenig. Laktose wird während der Reifung abgebaut: Je länger ein Käse reift, desto weniger Laktose enthält er. Laut Hersteller enthält Old Amsterdam Classic weniger als 0,01 % Laktose. Bei einer Unverträglichkeit beachten Sie bitte die Angaben auf der Verpackung."
+        },
+        vegetarian: {
+          q: "Ist Old Amsterdam für Vegetarier geeignet?",
+          a: "Ja. Laut Hersteller werden alle Käse von Old Amsterdam mit mikrobiellem (vegetarischem) Lab hergestellt. Sie enthalten Milch."
+        },
+        nutrition: {
+          q: "Welche Nährwerte hat Old Amsterdam?",
+          a: "Pro 100 g enthält Old Amsterdam Classic rund 401 kcal (1663 kJ), 33 g Fett (davon 22,9 g gesättigte Fettsäuren), 0 g Kohlenhydrate, 26 g Eiweiss und 2,2 g Salz, laut Hersteller (oldamsterdam.com). Zutaten: pasteurisierte Milch, Salz, Starterkulturen, mikrobielles Lab, Farbstoff (Carotine). Allergen: Milch. Massgebend ist die Angabe auf der Verpackung."
         },
         cheeseBoard: {
           q: "Wie erstelle ich die perfekte Käseplatte mit Old Amsterdam?",
@@ -875,7 +899,7 @@ export const translations = {
     },
     cheeseExpertise: {
       title: "Die Kunst des gereiften Gouda",
-      subtitle: "Was Old Amsterdam zum meistprämierten Gouda der Welt macht",
+      subtitle: "Was Old Amsterdam zu einem mehrfach ausgezeichneten Gouda macht",
       agingProcess: {
         title: "8 Monate geduldige Handwerkskunst",
         text: "Jeder Laib Old Amsterdam wird durchschnittlich 8 Monate auf traditionellen Holzregalen gereift. Diese verlängerte Reifezeit ermöglicht es dem Käse, seine charakteristischen knusprigen Kristalle zu entwickeln — winzige Geschmackskonzentrate, die auf der Zunge platzen. Im Gegensatz zu industriellem Gouda, der nur wenige Wochen reifen kann, schafft der langsame, natürliche Reifeprozess von Old Amsterdam aussergewöhnliche Tiefe und Komplexität."
@@ -1135,7 +1159,7 @@ export const translations = {
         },
         howMade: {
           q: "Come viene prodotto Old Amsterdam Original?",
-          a: "Il nostro formaggio è fatto con latte vaccino pastorizzato, caglio, colture, sale e colorante naturale. Il suo sapore distintivo è il risultato di una cultura familiare segreta e un processo di maturazione in tre fasi."
+          a: "Il nostro formaggio è prodotto con latte vaccino pastorizzato, sale, fermenti, caglio microbico e un colorante naturale (caroteni). Il suo sapore distintivo nasce da una ricetta di famiglia segreta e da un'attenta stagionatura su assi di legno: il formaggio matura in base al gusto, non all'età."
         },
         agingTime: {
           q: "Quanto tempo viene stagionato Old Amsterdam Original?",
@@ -1151,7 +1175,7 @@ export const translations = {
         },
         buyGoudaSwitzerland: {
           q: "Dove posso comprare formaggio Gouda premium in Svizzera?",
-          a: "Old Amsterdam, uno dei Gouda più premiati al mondo, è ora disponibile in tutta la Svizzera da Coop e MANOR FOOD. Lo troverete in tutte le principali città svizzere, tra cui Zurigo, Ginevra, Basilea, Berna, Losanna, Lucerna, San Gallo e Lugano. Scegliete tra la Punta Classica (210g) o le pratiche Fette (115g)."
+          a: "Old Amsterdam, un Gouda stagionato più volte premiato, è ora disponibile in tutta la Svizzera da Coop e MANOR FOOD. Lo troverete in tutte le principali città svizzere, tra cui Zurigo, Ginevra, Basilea, Berna, Losanna, Lucerna, San Gallo e Lugano. Scegliete tra la Punta Classica (210g) o le pratiche Fette (115g)."
         },
         bestGoudaSwitzerland: {
           q: "Qual è il miglior formaggio Gouda disponibile in Svizzera?",
@@ -1159,7 +1183,7 @@ export const translations = {
         },
         dutchGoudaVsSwiss: {
           q: "Qual è la differenza tra Gouda olandese e Gouda svizzero?",
-          a: "Il Gouda olandese tradizionale, come Old Amsterdam, è originario dei Paesi Bassi e segue tradizioni casearie secolari. Old Amsterdam utilizza una ricetta familiare segreta dal 1985, con un processo di stagionatura brevettato in tre fasi su scaffali di legno che produce cristalli croccanti caratteristici. Le varietà di Gouda svizzero sono prodotte localmente. Entrambi hanno i loro meriti, ma le medaglie d'Oro di Old Amsterdam ai World Cheese Awards 2025 a Berna confermano la sua qualità mondiale."
+          a: "Il Gouda olandese tradizionale, come Old Amsterdam, è originario dei Paesi Bassi e segue tradizioni casearie secolari. Old Amsterdam utilizza una ricetta familiare segreta dal 1985 e una stagionatura su assi di legno che produce i caratteristici cristalli croccanti. Le varietà di Gouda svizzero sono prodotte localmente. Entrambi hanno i loro meriti, ma le medaglie d'Oro di Old Amsterdam ai World Cheese Awards 2025 a Berna confermano la sua qualità mondiale."
         },
         goudaVsGruyere: {
           q: "Qual è la differenza tra Gouda e Gruyère?",
@@ -1167,7 +1191,15 @@ export const translations = {
         },
         lactose: {
           q: "Il Gouda stagionato contiene lattosio?",
-          a: "Pochissimo. Il lattosio si degrada durante la stagionatura: più un formaggio matura, meno ne contiene. I formaggi Old Amsterdam sono quasi privi di lattosio. In caso di intolleranza, controlla le informazioni nutrizionali sulla confezione."
+          a: "Pochissimo. Il lattosio si degrada durante la stagionatura: più un formaggio matura, meno ne contiene. Secondo il produttore, Old Amsterdam Classic contiene meno dello 0,01 % di lattosio. In caso di intolleranza, controlla le informazioni sulla confezione."
+        },
+        vegetarian: {
+          q: "Old Amsterdam è adatto ai vegetariani?",
+          a: "Sì. Secondo il produttore, tutti i formaggi Old Amsterdam sono prodotti con caglio microbico (vegetariano). Contengono latte."
+        },
+        nutrition: {
+          q: "Quali sono i valori nutrizionali di Old Amsterdam?",
+          a: "Per 100 g, Old Amsterdam Classic contiene circa 401 kcal (1663 kJ), 33 g di grassi (di cui 22,9 g di acidi grassi saturi), 0 g di carboidrati, 26 g di proteine e 2,2 g di sale, secondo il produttore (oldamsterdam.com). Ingredienti: latte pastorizzato, sale, fermenti, caglio microbico, colorante (caroteni). Allergene: latte. Fa fede l'etichetta sulla confezione."
         },
         cheeseBoard: {
           q: "Come creare il tagliere di formaggi perfetto con Old Amsterdam?",
@@ -1189,7 +1221,7 @@ export const translations = {
     },
     cheeseExpertise: {
       title: "L'Arte del Gouda Stagionato",
-      subtitle: "Cosa rende Old Amsterdam il Gouda più premiato al mondo",
+      subtitle: "Cosa rende Old Amsterdam un Gouda più volte premiato",
       agingProcess: {
         title: "8 Mesi di Paziente Artigianalità",
         text: "Ogni forma di Old Amsterdam viene stagionata per una media di 8 mesi su tradizionali scaffali di legno. Questo prolungato periodo di maturazione permette al formaggio di sviluppare i suoi cristalli croccanti caratteristici — piccoli concentrati di sapore che esplodono sul palato. A differenza del Gouda industriale che può essere stagionato per sole poche settimane, il lento processo di maturazione naturale di Old Amsterdam crea una profondità e complessità straordinarie."

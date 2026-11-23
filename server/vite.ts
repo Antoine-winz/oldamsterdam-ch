@@ -37,8 +37,6 @@ interface LangMeta {
   product1Desc: string;
   product2: string;
   product2Desc: string;
-  brandTitle: string;
-  brandBody: string;
   whereToBuyTitle: string;
   whereToBuyBody: string;
 }
@@ -57,8 +55,6 @@ const LANG_META: Record<string, LangMeta> = {
     product1Desc: "Premium aged Gouda cheese rich in characteristic crystals with a hint of sweetness. Sharp yet creamy flavor, smooth and easy to slice. Perfect for gourmet cheese boards and entertaining.",
     product2: "Old Amsterdam Slices (115g, 10 slices)",
     product2Desc: "Premium aged Gouda cheese in convenient pre-sliced format. Sharp flavor with a creamy texture and characteristic crystals. Ideal for sandwiches, burgers, and quick gourmet snacks.",
-    brandTitle: "The Old Amsterdam Story",
-    brandBody: "Old Amsterdam was officially introduced in 1985. This unique cheese quickly became a massive success among domestic and international cheese lovers. Our distinctive family recipe, combined with an 8-month maturation process on wooden shelves, creates the characteristic crunchy crystals and robust flavor that cheese connoisseurs love. Today, Westland Kaas Groep BV distributes Old Amsterdam to more than 60 countries worldwide. In Switzerland, this award-winning Dutch Gouda is exclusively available at Coop and MANOR FOOD.",
     whereToBuyTitle: "Where to Buy",
     whereToBuyBody: "Find Old Amsterdam at 384 Coop stores and 23 Manor Food stores across Switzerland. Search by postal code or town name to locate your nearest store.",
   },
@@ -75,8 +71,6 @@ const LANG_META: Record<string, LangMeta> = {
     product1Desc: "Fromage Gouda affiné premium riche en cristaux caractéristiques avec une pointe de douceur. Saveur piquante et pourtant onctueuse, facile à trancher. Parfait pour les plateaux de fromages gastronomiques.",
     product2: "Old Amsterdam Tranches (115g, 10 tranches)",
     product2Desc: "Fromage Gouda affiné premium en format pratique pré-tranché. Saveur piquante avec une texture crémeuse et des cristaux caractéristiques. Idéal pour les sandwichs et les snacks gastronomiques rapides.",
-    brandTitle: "L'Histoire d'Old Amsterdam",
-    brandBody: "Old Amsterdam a été officiellement lancé en 1985. Ce fromage unique est rapidement devenu un grand succès auprès des amateurs de fromage dans le monde entier. Notre recette familiale distinctive, combinée à un processus de maturation de 8 mois sur des étagères en bois, crée les cristaux croquants caractéristiques et la saveur robuste que les connaisseurs adorent. Aujourd'hui disponible en Suisse exclusivement chez Coop et MANOR FOOD.",
     whereToBuyTitle: "Où Acheter",
     whereToBuyBody: "Trouvez Old Amsterdam dans 384 magasins Coop et 23 Manor Food en Suisse. Recherchez par NPA ou nom de ville pour trouver le magasin le plus proche.",
   },
@@ -93,8 +87,6 @@ const LANG_META: Record<string, LangMeta> = {
     product1Desc: "Premium gereifter Gouda Käse reich an charakteristischen Kristallen mit einem Hauch von Süsse. Pikant und doch cremig, glatt und leicht zu schneiden. Perfekt für Gourmet-Käseplatten.",
     product2: "Old Amsterdam Scheiben (115g, 10 Scheiben)",
     product2Desc: "Premium gereifter Gouda Käse im praktischen vorgeschnittenen Format. Pikanter Geschmack mit cremiger Textur und charakteristischen Kristallen. Ideal für Sandwiches und schnelle Gourmet-Snacks.",
-    brandTitle: "Die Geschichte von Old Amsterdam",
-    brandBody: "Old Amsterdam wurde 1985 offiziell eingeführt. Dieser einzigartige Käse wurde schnell zu einem grossen Erfolg bei Käseliebhabern weltweit. Unser unverwechselbares Familienrezept, kombiniert mit einem 8-monatigen Reifeprozess auf Holzregalen, erzeugt die charakteristischen knackigen Kristalle und den kräftigen Geschmack. Heute in der Schweiz exklusiv erhältlich bei Coop und MANOR FOOD.",
     whereToBuyTitle: "Wo Kaufen",
     whereToBuyBody: "Finden Sie Old Amsterdam in 384 Coop-Filialen und 23 Manor Food-Geschäften in der Schweiz. PLZ oder Ortsname eingeben, um die nächste Filiale zu finden.",
   },
@@ -111,8 +103,6 @@ const LANG_META: Record<string, LangMeta> = {
     product1Desc: "Formaggio Gouda stagionato premium ricco di cristalli caratteristici con un tocco di dolcezza. Sapore deciso eppure morbido, liscio e facile da affettare. Perfetto per taglieri di formaggi gourmet.",
     product2: "Old Amsterdam Fette (115g, 10 fette)",
     product2Desc: "Formaggio Gouda stagionato premium in pratico formato pre-affettato. Sapore deciso con una texture cremosa e cristalli caratteristici. Ideale per panini e snack gourmet veloci.",
-    brandTitle: "La Storia di Old Amsterdam",
-    brandBody: "Old Amsterdam è stato ufficialmente introdotto nel 1985. Questo formaggio unico è rapidamente diventato un grande successo tra gli amanti del formaggio in tutto il mondo. La nostra distintiva ricetta di famiglia, abbinata a un processo di maturazione di 8 mesi su scaffali in legno, crea i caratteristici cristalli croccanti e il sapore robusto. Oggi disponibile in Svizzera esclusivamente da Coop e MANOR FOOD.",
     whereToBuyTitle: "Dove Acquistare",
     whereToBuyBody: "Trova Old Amsterdam in 384 negozi Coop e 23 Manor Food in Svizzera. Cerca per CAP o nome della città per trovare il negozio più vicino.",
   },
@@ -176,6 +166,8 @@ function getFaq(lang: string): { title: string; items: { q: string; a: string }[
 
 function buildStaticBody(meta: LangMeta, lang: string): string {
   const faq = getFaq(lang);
+  // Texte « Histoire » : même source que le site (client/src/lib/i18n.ts).
+  const story = (translations[lang as keyof typeof translations] ?? translations.en).brandStory;
   const faqHtml = faq.items
     .map((item) => `<div>
             <h3>${escText(item.q)}</h3>
@@ -206,8 +198,10 @@ function buildStaticBody(meta: LangMeta, lang: string): string {
           </div>
         </section>
         <section>
-          <h2>${escText(meta.brandTitle)}</h2>
-          <p>${escText(meta.brandBody)}</p>
+          <h2>${escText(story.title)}</h2>
+          <p>${escText(story.paragraph1)}</p>
+          <p>${escText(story.paragraph2)}</p>
+          <p>${escText(story.paragraph3)}</p>
         </section>
         <section>
           <h2>${escText(meta.whereToBuyTitle)}</h2>
