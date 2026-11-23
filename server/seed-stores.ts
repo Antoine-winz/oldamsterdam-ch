@@ -32,15 +32,27 @@ export async function seedStores() {
     await pool.query(`UPDATE stores SET retailer = 'Coop' WHERE retailer IS NULL OR retailer = ''`);
     await pool.query(`UPDATE stores SET has_wedge_210g = true, has_slices_115g = true, availability_note = NULL WHERE retailer = 'Manor Food'`);
 
-    const { rows: existing } = await pool.query(
-      "SELECT COUNT(*) FROM stores WHERE retailer = 'Coop'"
+    // Entrées retirées le 23.11.2026 : ce ne sont pas des magasins
+    // (centres coop.ch de Bussigny et Spreitenbach, restaurant du personnel de Schafisheim),
+    // et deux magasins absents des listes coop.ch du 23.11.2026 (Davos, Sion City Place du Midi).
+    await pool.query(
+      "DELETE FROM stores WHERE retailer = 'Coop' AND debitor = ANY($1)",
+      [["6001", "6003", "3702", "1971", "1985"]]
     );
-    const coopCount = parseInt(existing[0].count, 10);
 
-    if (coopCount === 0) {
+    // Ajoute les magasins Coop de stores-data.json qui manquent dans la base
+    // (base vide, ou nouveaux magasins ajoutés au fichier). Ne modifie ni ne
+    // supprime jamais un magasin déjà présent.
+    const { rows: existing } = await pool.query(
+      "SELECT debitor FROM stores WHERE debitor IS NOT NULL"
+    );
+    const knownDebitors = new Set(existing.map((r: { debitor: string }) => r.debitor));
+
+    {
       const dataPath = path.join(process.cwd(), "server", "stores-data.json");
       if (fs.existsSync(dataPath)) {
-        const storesData = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
+        const storesData = (JSON.parse(fs.readFileSync(dataPath, "utf-8")) as any[])
+          .filter((s) => !knownDebitors.has(String(s.debitor)));
         for (const s of storesData) {
           await pool.query(
             `INSERT INTO stores (debitor, name, city, region, format, npa, address, full_address, phone, has_wedge_210g, has_slices_115g, latitude, longitude, retailer)
@@ -54,7 +66,28 @@ export async function seedStores() {
             ]
           );
         }
-        console.log(`[stores] Seeded ${storesData.length} Coop stores`);
+        if (storesData.length > 0) console.log(`[stores] Seeded ${storesData.length} Coop stores`);
+      }
+    }
+
+    // Produits par magasin Coop : stores-data.json fait foi (morceau 210 g, tranches 115 g).
+    {
+      const dataPath = path.join(process.cwd(), "server", "stores-data.json");
+      if (fs.existsSync(dataPath)) {
+        const all = JSON.parse(fs.readFileSync(dataPath, "utf-8")) as any[];
+        const { rowCount } = await pool.query(
+          `UPDATE stores s
+              SET has_wedge_210g = v.wedge, has_slices_115g = v.slices
+             FROM unnest($1::text[], $2::boolean[], $3::boolean[]) AS v(debitor, wedge, slices)
+            WHERE s.retailer = 'Coop' AND s.debitor = v.debitor
+              AND (s.has_wedge_210g <> v.wedge OR s.has_slices_115g <> v.slices)`,
+          [
+            all.map((s) => String(s.debitor)),
+            all.map((s) => !!s.hasWedge210g),
+            all.map((s) => !!s.hasSlices115g),
+          ]
+        );
+        if (rowCount) console.log(`[stores] Updated products for ${rowCount} Coop stores`);
       }
     }
 

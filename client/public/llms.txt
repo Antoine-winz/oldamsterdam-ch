@@ -2,10 +2,12 @@
 
 > Old Amsterdam is a premium aged Gouda cheese from the Netherlands (Westland Kaas Groep BV). In Switzerland it is sold at Coop and MANOR FOOD. The official Swiss website helps you find the nearest store by postal code or town. Website: https://oldamsterdam.ch
 
+oldamsterdam.ch is the Swiss landing page of the brand: Swiss availability, the two products sold in Switzerland and the store finder. For the full range, recipes and brand story, see https://oldamsterdam.com.
+
 Old Amsterdam is matured on wooden shelves for about 8 months, which gives it its characteristic crunchy crystals and a robust, slightly sweet flavour. It has been made since 1985 and is sold in more than 60 countries. In Switzerland, NECTRA FOOD SA is the importer and distributor.
 
 ## Swiss availability
-- Coop: 341 stores across Switzerland (per the Swiss website)
+- Coop: 384 stores across Switzerland (per the Swiss website)
 - MANOR FOOD: 23 stores across Switzerland (per the Swiss website)
 - Find the nearest store: https://oldamsterdam.ch/en/#where-to-buy (search by postal code, town, or device location)
 - Online: Coop.ch search for Old Amsterdam: https://www.coop.ch/de/search/?text=old+amsterdam
@@ -33,15 +35,18 @@ Old Amsterdam is matured on wooden shelves for about 8 months, which gives it it
 - Where can I buy it in Switzerland? At Coop and MANOR FOOD stores; use the store finder on the website.
 - Who distributes it in Switzerland? NECTRA FOOD SA, exclusive importer for Old Amsterdam and Westland cheeses.
 - Is it Dutch Gouda or Swiss? It is Dutch Gouda, made in the Netherlands.
+- What is the difference between Gouda and Gruyère? Gouda is a Dutch washed-curd cheese, usually from pasteurised milk, milder and slightly sweet; aged Gouda such as Old Amsterdam has caramel notes and crunchy crystals. Le Gruyère AOP is a Swiss raw-milk hard cheese from western Switzerland, matured at least five months, fruity and nutty. Gruyère is the classic for fondue and gratins; aged Gouda suits the apéro, cheese boards and sandwiches.
+- Does aged Gouda contain lactose? Very little: lactose breaks down during ripening. Old Amsterdam cheeses are almost lactose-free (source: https://oldamsterdam.com/faq/can-people-with-lactose-intolerance-eat-your-cheeses/).
+- Where can I buy aged Gouda in Switzerland? Old Amsterdam is sold at 384 Coop stores and 23 MANOR FOOD stores; the store finder searches by postal code or town.
 
 ## Résumé en français
-Old Amsterdam est un Gouda premium affiné, fabriqué aux Pays-Bas. En Suisse, il est vendu chez Coop (341 magasins) et MANOR FOOD (23 magasins). Le site https://oldamsterdam.ch/fr/ permet de trouver le magasin le plus proche par code postal ou localité.
+Old Amsterdam est un Gouda premium affiné, fabriqué aux Pays-Bas. En Suisse, il est vendu chez Coop (384 magasins) et MANOR FOOD (23 magasins). Le site https://oldamsterdam.ch/fr/ permet de trouver le magasin le plus proche par code postal ou localité.
 
 ## Zusammenfassung auf Deutsch
-Old Amsterdam ist ein gereifter Premium-Gouda aus den Niederlanden. In der Schweiz ist er bei Coop (341 Filialen) und MANOR FOOD (23 Filialen) erhältlich. Auf https://oldamsterdam.ch/de/ finden Sie die nächste Filiale über Postleitzahl oder Ortschaft.
+Old Amsterdam ist ein gereifter Premium-Gouda aus den Niederlanden. In der Schweiz ist er bei Coop (384 Filialen) und MANOR FOOD (23 Filialen) erhältlich. Auf https://oldamsterdam.ch/de/ finden Sie die nächste Filiale über Postleitzahl oder Ortschaft.
 
 ## Riassunto in italiano
-Old Amsterdam è un Gouda premium stagionato dai Paesi Bassi. In Svizzera è disponibile da Coop (341 punti vendita) e MANOR FOOD (23 punti vendita). Su https://oldamsterdam.ch/it/ si trova il punto vendita più vicino tramite CAP o località.
+Old Amsterdam è un Gouda premium stagionato dai Paesi Bassi. In Svizzera è disponibile da Coop (384 punti vendita) e MANOR FOOD (23 punti vendita). Su https://oldamsterdam.ch/it/ si trova il punto vendita più vicino tramite CAP o località.
 
 ## Contact
 - Swiss distribution: NECTRA FOOD SA, https://nectrafood.ch

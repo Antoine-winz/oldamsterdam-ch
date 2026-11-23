@@ -3,12 +3,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { Store, Search, MapPin, X, Navigation, Package, ShoppingCart, Info, LocateFixed } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-
-const COOP_LANG_MAP: Record<string, string> = { en: 'de', fr: 'fr', de: 'de', it: 'it' };
-function coopSearchUrl(language: string): string {
-  const lang = COOP_LANG_MAP[language] || 'de';
-  return `https://www.coop.ch/${lang}/search/?text=old+amsterdam`;
-}
+import { coopSearchUrl } from '@/lib/coop';
+import { isInSearchArea } from '@/lib/geo';
 
 type RetailerFilter = 'all' | 'coop' | 'manor';
 
@@ -54,7 +50,7 @@ export default function WhereToBuySection() {
       const resp = await fetch(`/api/stores/nearest?lat=${lat}&lon=${lon}&retailer=${r}&limit=5`);
       if (!resp.ok) throw new Error();
       const data: SearchResult = await resp.json();
-      setResult(data);
+      setResult({ ...data, location: { ...data.location, label: tw.yourLocation } });
       setPanelOpen(true);
     } catch {
       setError(tw.errorFetching);
@@ -68,9 +64,22 @@ export default function WhereToBuySection() {
     setGeoLoading(true);
     setError('');
     navigator.geolocation.getCurrentPosition(
-      (pos) => doSearchByCoords(pos.coords.latitude, pos.coords.longitude, retailer),
-      () => { setError(tw.locationDenied); setGeoLoading(false); },
-      { timeout: 10000 }
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+        // Hors de Suisse : le serveur refuserait la recherche. On le dit clairement.
+        if (!isInSearchArea(latitude, longitude)) {
+          setError(tw.locationOutside);
+          setGeoLoading(false);
+          return;
+        }
+        doSearchByCoords(latitude, longitude, retailer);
+      },
+      (err) => {
+        // 1 = refus de l'utilisateur ; 2 et 3 = position indisponible ou délai dépassé.
+        setError(err && err.code === 1 ? tw.locationDenied : tw.locationUnavailable);
+        setGeoLoading(false);
+      },
+      { timeout: 10000, maximumAge: 60000 }
     );
   }, [tw, retailer, doSearchByCoords]);
 
@@ -348,16 +357,30 @@ export default function WhereToBuySection() {
                             )}
                           </>
                         </div>
-                        <a
-                          href={mapsUrl(store.full_address)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-xs text-white/40 hover:text-primary transition-colors font-body shrink-0"
-                          data-testid={`link-maps-${key}`}
-                        >
-                          <Navigation className="w-3 h-3" />
-                          {tw.mapsLink}
-                        </a>
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 shrink-0">
+                          {isCoop && (
+                            <a
+                              href={coopSearchUrl(language)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-xs text-primary/80 hover:text-primary transition-colors font-body shrink-0"
+                              data-testid={`link-coop-online-${key}`}
+                            >
+                              <ShoppingCart className="w-3 h-3" />
+                              {tw.buyOnlineShort}
+                            </a>
+                          )}
+                          <a
+                            href={mapsUrl(store.full_address)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs text-white/40 hover:text-primary transition-colors font-body shrink-0"
+                            data-testid={`link-maps-${key}`}
+                          >
+                            <Navigation className="w-3 h-3" />
+                            {tw.mapsLink}
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>

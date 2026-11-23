@@ -81,7 +81,7 @@ export default function DocumentHead() {
     const xDefault = document.createElement('link');
     xDefault.rel = 'alternate';
     xDefault.hreflang = 'x-default';
-    xDefault.href = `${BASE_URL}/en/`;
+    xDefault.href = `${BASE_URL}/`;
     document.head.appendChild(xDefault);
 
     setOrCreate('link[rel="canonical"]', 'href', currentUrl, () => {

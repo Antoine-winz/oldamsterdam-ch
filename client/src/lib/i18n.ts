@@ -13,8 +13,8 @@ export const translations = {
       business: "Business"
     },
     meta: {
-      title: "Old Amsterdam Switzerland – Find Your Nearest Coop or Manor Food Store | Gold WCA 2025",
-      description: "Find Old Amsterdam premium aged Gouda near you. Available at 341 Coop stores and 23 Manor Food stores across Switzerland. Gold winner at World Cheese Awards 2025. Search by postal code or town to find your closest store.",
+      title: "Old Amsterdam Aged Gouda in Switzerland | Coop & Manor Food",
+      description: "Old Amsterdam: aged Gouda from the Netherlands, Gold at the World Cheese Awards 2025 in Bern. Find it at Coop and Manor Food stores across Switzerland.",
       keywords: "Old Amsterdam Switzerland, Old Amsterdam Coop, Old Amsterdam Manor Food, buy Old Amsterdam Switzerland, aged Gouda Switzerland, premium Gouda Swiss stores, store locator Switzerland, World Cheese Awards 2025, Dutch cheese Switzerland, find cheese store near me"
     },
     hero: {
@@ -127,13 +127,17 @@ export const translations = {
       closeSearch: "Close",
       storeCount: "5 nearest stores",
       buyOnline: "Buy online on Coop.ch",
+      buyOnlineShort: "Buy on Coop.ch",
       availabilityNote: "Availability to be confirmed with the store",
       badgeWedge: "Wedge 210g",
       badgeSlices: "Slices 115g",
       disclaimer: "Availability based on latest available information. For exact shelf availability, please check directly with the store.",
       useMyLocation: "Use my location",
       locating: "Locating...",
-      locationDenied: "Location access denied. Please enter your postal code."
+      locationDenied: "Location access denied. Please enter your postal code.",
+      locationOutside: "You seem to be outside Switzerland. Come back to Switzerland and try again!",
+      locationUnavailable: "Your location could not be determined. Please enter your postal code.",
+      yourLocation: "Your location"
     },
     contact: {
       title: "Wholesale Inquiries",
@@ -214,6 +218,14 @@ export const translations = {
         dutchGoudaVsSwiss: {
           q: "What is the difference between Dutch Gouda and Swiss-made Gouda?",
           a: "Traditional Dutch Gouda, like Old Amsterdam, originates from the Netherlands and follows centuries-old Dutch cheesemaking traditions. Old Amsterdam uses a secret family recipe dating back to 1985, with a patented three-phase aging process on wooden shelves that produces characteristic crunchy crystals. Swiss-produced Gouda varieties are made locally. Both have their merits, but Old Amsterdam's Gold medals at the World Cheese Awards 2025 in Bern confirm its world-class quality."
+        },
+        goudaVsGruyere: {
+          q: "What is the difference between Gouda and Gruyère?",
+          a: "They are two different cheeses. Gouda comes from the Netherlands: the curd is washed with warm water, which gives a milder, slightly sweet cheese, usually made from pasteurised milk. An aged Gouda such as Old Amsterdam develops caramel notes and crunchy crystals. Le Gruyère AOP is a Swiss raw-milk hard cheese from western Switzerland, matured for at least five months, with a fruity, nutty taste. Gruyère is the classic choice for fondue and gratins; aged Gouda is at its best at the apéro, on a cheese board or in a sandwich. The two go very well together on the same platter."
+        },
+        lactose: {
+          q: "Does aged Gouda contain lactose?",
+          a: "Very little. Lactose breaks down as cheese ripens: the longer a cheese matures, the less lactose it contains. Old Amsterdam cheeses are almost lactose-free. If you have an intolerance, please check the nutrition information on the pack."
         },
         cheeseBoard: {
           q: "How do I create the perfect cheese board with Old Amsterdam?",
@@ -315,8 +327,8 @@ export const translations = {
       business: "Entreprise"
     },
     meta: {
-      title: "Old Amsterdam Suisse – Trouvez votre magasin Coop ou Manor Food le plus proche | Or WCA 2025",
-      description: "Trouvez Old Amsterdam près de chez vous. Disponible dans 341 magasins Coop et 23 Manor Food en Suisse. Médaillé d'Or aux World Cheese Awards 2025 à Berne. Recherchez par NPA ou ville pour trouver le magasin le plus proche.",
+      title: "Old Amsterdam, Gouda affiné en Suisse | Coop & Manor Food",
+      description: "Old Amsterdam : le Gouda affiné des Pays-Bas, médaillé d'or aux World Cheese Awards 2025 à Berne. Trouvez-le chez Coop et Manor Food partout en Suisse.",
       keywords: "Old Amsterdam Suisse, Old Amsterdam Coop, Old Amsterdam Manor Food, acheter Old Amsterdam Suisse, Gouda affiné Suisse, trouver magasin fromage, localisateur magasin Suisse, World Cheese Awards 2025, fromage hollandais Suisse, Gouda premium Suisse romande"
     },
     hero: {
@@ -350,14 +362,14 @@ export const translations = {
       learnMore: "En Savoir Plus Sur Notre Histoire"
     },
     brandStory: {
-      title: "L'Histoire d'Old Amsterdam",
-      paragraph1: "Lorsque le Zuiderzee fut fermé en 1932, la famille Westland dut abandonner la vie de pêcheur. Inspirés par les délicieux fromages que leur mère rapportait d'Amsterdam, les jeunes frères Westland ouvrirent une petite fromagerie sur le Lijnbaansgracht à Amsterdam. Après une quête infatigable à travers l'Europe, les frères recréèrent enfin le goût de leur jeunesse.",
-      paragraph2: "Old Amsterdam fut officiellement introduit en 1985. Ce fromage unique devint rapidement un énorme succès parmi les amateurs de fromage du monde entier. Notre recette familiale distinctive, combinée à un processus de maturation de 8 mois sur des étagères en bois, crée les cristaux croquants caractéristiques et la saveur robuste que les connaisseurs adorent.",
+      title: "L'histoire d'Old Amsterdam",
+      paragraph1: "En 1932, la fermeture du Zuiderzee oblige la famille Westland à abandonner la pêche. Inspirés par les délicieux fromages que leur mère rapportait d'Amsterdam, les jeunes frères Westland ouvrent une petite fromagerie sur le Lijnbaansgracht, à Amsterdam. Après une longue quête à travers l'Europe, ils retrouvent enfin le goût de leur jeunesse.",
+      paragraph2: "Old Amsterdam est lancé officiellement en 1985. Ce fromage unique rencontre vite un énorme succès auprès des amateurs du monde entier. Notre recette familiale, associée à un affinage de 8 mois sur des étagères en bois, donne les cristaux croquants et la saveur corsée que les connaisseurs adorent.",
       paragraph3: "Aujourd'hui, Westland Kaas Groep BV distribue le fromage Old Amsterdam dans plus de 60 pays. En Suisse, ce Gouda hollandais primé est désormais disponible chez Coop et MANOR FOOD.",
-      summaryMobile: "Quand le Zuiderzee fut fermé en 1932, les frères Westland se tournèrent vers la fromagerie. Après des années à perfectionner leur art, Old Amsterdam naquit en 1985 — un Gouda primé, apprécié dans plus de 60 pays, désormais disponible en Suisse chez Coop et MANOR FOOD.",
+      summaryMobile: "En 1932, à la fermeture du Zuiderzee, les frères Westland se tournent vers le fromage. Après des années à perfectionner leur art, Old Amsterdam naît en 1985 : un Gouda primé, apprécié dans plus de 60 pays, désormais disponible en Suisse chez Coop et MANOR FOOD.",
       readMore: "Lire la suite",
       readLess: "Réduire",
-      learnMore: "Découvrez Notre Histoire Complète"
+      learnMore: "Découvrez notre histoire complète"
     },
     awards: {
       title: "Old Amsterdam triomphe aux World Cheese Awards 2025",
@@ -429,13 +441,17 @@ export const translations = {
       closeSearch: "Fermer",
       storeCount: "5 magasins les plus proches",
       buyOnline: "Acheter en ligne sur Coop.ch",
+      buyOnlineShort: "Acheter sur Coop.ch",
       availabilityNote: "Disponibilité à vérifier auprès du magasin",
       badgeWedge: "Pointe 210g",
       badgeSlices: "Tranches 115g",
       disclaimer: "Disponibilité selon les dernières informations disponibles. Pour une disponibilité exacte en rayon, veuillez vérifier directement auprès du magasin.",
       useMyLocation: "Utiliser ma position",
       locating: "Localisation...",
-      locationDenied: "Accès refusé. Veuillez entrer votre NPA."
+      locationDenied: "Accès refusé. Veuillez entrer votre NPA.",
+      locationOutside: "Vous semblez être hors de Suisse. Revenez en Suisse et réessayez !",
+      locationUnavailable: "Position introuvable. Veuillez entrer votre NPA.",
+      yourLocation: "Votre position"
     },
     contact: {
       title: "Demandes de Gros",
@@ -516,6 +532,14 @@ export const translations = {
         dutchGoudaVsSwiss: {
           q: "Quelle est la différence entre le Gouda hollandais et le Gouda suisse?",
           a: "Le Gouda hollandais traditionnel, comme Old Amsterdam, est originaire des Pays-Bas et suit des traditions fromagères séculaires. Old Amsterdam utilise une recette familiale secrète datant de 1985, avec un processus d'affinage breveté en trois phases sur des étagères en bois qui produit des cristaux croquants caractéristiques. Les variétés de Gouda suisses sont produites localement. Les deux ont leurs mérites, mais les médailles d'Or d'Old Amsterdam aux World Cheese Awards 2025 à Berne confirment sa qualité mondiale."
+        },
+        goudaVsGruyere: {
+          q: "Quelle est la différence entre le Gouda et le Gruyère?",
+          a: "Ce sont deux fromages différents. Le Gouda vient des Pays-Bas : le caillé est lavé à l'eau chaude, ce qui donne un fromage plus doux, légèrement sucré, en général au lait pasteurisé. Un Gouda affiné comme Old Amsterdam développe des notes de caramel et des cristaux croquants. Le Gruyère AOP est un fromage suisse à pâte dure au lait cru, produit en Suisse occidentale et affiné au moins cinq mois, au goût fruité avec des notes de noisette. Le Gruyère est le choix classique pour la fondue et les gratins ; le Gouda affiné se savoure à l'apéritif, sur un plateau de fromages ou en sandwich. Les deux se marient très bien sur un même plateau."
+        },
+        lactose: {
+          q: "Le Gouda affiné contient-il du lactose?",
+          a: "Très peu. Le lactose se dégrade pendant l'affinage : plus un fromage mûrit, moins il en contient. Les fromages Old Amsterdam sont presque sans lactose. En cas d'intolérance, vérifiez les informations nutritionnelles sur l'emballage."
         },
         cheeseBoard: {
           q: "Comment créer le plateau de fromage parfait avec Old Amsterdam?",
@@ -617,8 +641,8 @@ export const translations = {
       business: "Geschäftskunden"
     },
     meta: {
-      title: "Old Amsterdam Schweiz – Nächste Coop oder Manor Food Filiale finden | Gold WCA 2025",
-      description: "Finden Sie Old Amsterdam in Ihrer Nähe. Erhältlich in 341 Coop-Filialen und 23 Manor Food-Geschäften in der Schweiz. Goldgewinner bei den World Cheese Awards 2025 in Bern. PLZ oder Ort eingeben und nächste Filiale finden.",
+      title: "Old Amsterdam, gereifter Gouda in der Schweiz | Coop & Manor Food",
+      description: "Old Amsterdam: gereifter Gouda aus den Niederlanden, Gold an den World Cheese Awards 2025 in Bern. Jetzt bei Coop und Manor Food in der ganzen Schweiz finden.",
       keywords: "Old Amsterdam Schweiz, Old Amsterdam Coop, Old Amsterdam Manor Food, Old Amsterdam kaufen Schweiz, gereifter Gouda Schweiz, Käse Filiale finden, Filialfinder Schweiz, World Cheese Awards 2025, holländischer Käse Schweiz, Premium Gouda Schweiz"
     },
     hero: {
@@ -653,13 +677,13 @@ export const translations = {
     },
     brandStory: {
       title: "Die Geschichte von Old Amsterdam",
-      paragraph1: "Als die Zuiderzee 1932 abgeschlossen wurde, musste die Familie Westland den Fischerleben aufgeben. Inspiriert von den köstlichen Käsesorten, die ihre Mutter aus Amsterdam mitbrachte, eröffneten die jungen Westland-Brüder ein kleines Käsegeschäft am Lijnbaansgracht in Amsterdam. Nach einer unermüdlichen Suche durch ganz Europa schufen die Brüder endlich den Geschmack ihrer Jugend neu.",
-      paragraph2: "Old Amsterdam wurde 1985 offiziell eingeführt. Dieser einzigartige Käse wurde schnell zu einem riesigen Erfolg bei einheimischen und internationalen Käseliebhabern. Unser unverwechselbares Familienrezept, kombiniert mit einem 8-monatigen Reifungsprozess auf Holzregalen, schafft die charakteristischen knackigen Kristalle und den robusten Geschmack, den Käsekenner lieben.",
-      paragraph3: "Heute vertreibt Westland Kaas Groep BV Old Amsterdam Käse in mehr als 60 Länder weltweit. In der Schweiz ist dieser preisgekrönte holländische Gouda ab sofort bei Coop und MANOR FOOD erhältlich.",
-      summaryMobile: "Als die Zuiderzee 1932 geschlossen wurde, wandten sich die Westland-Brüder der Käseherstellung zu. Nach Jahren der Perfektionierung entstand 1985 Old Amsterdam — ein preisgekrönter Gouda, beliebt in über 60 Ländern, jetzt in der Schweiz bei Coop und MANOR FOOD erhältlich.",
+      paragraph1: "Als die Zuiderzee 1932 abgedeicht wurde, musste die Familie Westland das Fischerleben aufgeben. Inspiriert von den köstlichen Käsen, die ihre Mutter aus Amsterdam mitbrachte, eröffneten die jungen Brüder Westland ein kleines Käsegeschäft an der Lijnbaansgracht in Amsterdam. Nach einer langen Suche quer durch Europa fanden sie den Geschmack ihrer Jugend endlich wieder.",
+      paragraph2: "1985 kam Old Amsterdam offiziell auf den Markt. Der einzigartige Käse wurde rasch zu einem grossen Erfolg bei Käseliebhabern auf der ganzen Welt. Unser Familienrezept und die achtmonatige Reifung auf Holzregalen sorgen für die typischen knusprigen Kristalle und den kräftigen Geschmack, den Kenner lieben.",
+      paragraph3: "Heute vertreibt die Westland Kaas Groep BV Old Amsterdam in mehr als 60 Ländern. In der Schweiz ist dieser preisgekrönte holländische Gouda jetzt bei Coop und MANOR FOOD erhältlich.",
+      summaryMobile: "Als die Zuiderzee 1932 abgedeicht wurde, wandten sich die Brüder Westland dem Käse zu. Nach Jahren des Verfeinerns entstand 1985 Old Amsterdam: ein preisgekrönter Gouda, beliebt in über 60 Ländern und jetzt in der Schweiz bei Coop und MANOR FOOD erhältlich.",
       readMore: "Mehr lesen",
       readLess: "Weniger anzeigen",
-      learnMore: "Entdecken Sie Unsere Vollständige Geschichte"
+      learnMore: "Entdecken Sie unsere ganze Geschichte"
     },
     awards: {
       title: "Old Amsterdam triumphiert bei den World Cheese Awards 2025",
@@ -731,13 +755,17 @@ export const translations = {
       closeSearch: "Schliessen",
       storeCount: "5 nächste Filialen",
       buyOnline: "Online kaufen auf Coop.ch",
+      buyOnlineShort: "Auf Coop.ch kaufen",
       availabilityNote: "Verfügbarkeit bitte beim Geschäft erfragen",
       badgeWedge: "Keil 210g",
       badgeSlices: "Scheiben 115g",
       disclaimer: "Verfügbarkeit basiert auf aktuellen Informationen. Für genaue Regalverfügbarkeit wenden Sie sich bitte direkt an das Geschäft.",
       useMyLocation: "Meinen Standort verwenden",
       locating: "Wird geortet...",
-      locationDenied: "Standortzugriff verweigert. Bitte PLZ eingeben."
+      locationDenied: "Standortzugriff verweigert. Bitte PLZ eingeben.",
+      locationOutside: "Sie scheinen ausserhalb der Schweiz zu sein. Kommen Sie zurück in die Schweiz und versuchen Sie es noch einmal!",
+      locationUnavailable: "Standort konnte nicht ermittelt werden. Bitte PLZ eingeben.",
+      yourLocation: "Ihr Standort"
     },
     contact: {
       title: "Grosshandelsanfragen",
@@ -818,6 +846,14 @@ export const translations = {
         dutchGoudaVsSwiss: {
           q: "Was ist der Unterschied zwischen holländischem Gouda und Schweizer Gouda?",
           a: "Traditioneller holländischer Gouda, wie Old Amsterdam, stammt aus den Niederlanden und folgt jahrhundertealten holländischen Käsereitraditionen. Old Amsterdam verwendet ein geheimes Familienrezept aus dem Jahr 1985 mit einem patentierten dreiphasigen Reifeprozess auf Holzregalen, der charakteristische knusprige Kristalle erzeugt. Schweizer Gouda-Varianten werden lokal hergestellt. Beide haben ihre Vorzüge, aber die Goldmedaillen von Old Amsterdam bei den World Cheese Awards 2025 in Bern bestätigen seine Weltklasse-Qualität."
+        },
+        goudaVsGruyere: {
+          q: "Was ist der Unterschied zwischen Gouda und Gruyère?",
+          a: "Es sind zwei verschiedene Käse. Gouda stammt aus den Niederlanden: Der Käsebruch wird mit warmem Wasser gewaschen, das ergibt einen milderen, leicht süsslichen Käse, meist aus pasteurisierter Milch. Ein gereifter Gouda wie Old Amsterdam entwickelt Karamellnoten und knusprige Reifekristalle. Le Gruyère AOP ist ein Schweizer Hartkäse aus Rohmilch aus der Westschweiz, mindestens fünf Monate gereift, mit fruchtig-nussigem Geschmack. Gruyère ist der Klassiker für Fondue und Gratins; gereifter Gouda passt zum Apéro, auf die Käseplatte oder ins Sandwich. Auf derselben Platte ergänzen sich die beiden sehr gut."
+        },
+        lactose: {
+          q: "Enthält gereifter Gouda Laktose?",
+          a: "Sehr wenig. Laktose wird während der Reifung abgebaut: Je länger ein Käse reift, desto weniger Laktose enthält er. Die Käse von Old Amsterdam sind nahezu laktosefrei. Bei einer Unverträglichkeit beachten Sie bitte die Nährwertangaben auf der Verpackung."
         },
         cheeseBoard: {
           q: "Wie erstelle ich die perfekte Käseplatte mit Old Amsterdam?",
@@ -919,8 +955,8 @@ export const translations = {
       business: "Aziende"
     },
     meta: {
-      title: "Old Amsterdam Svizzera – Trova il tuo Coop o Manor Food più vicino | Oro WCA 2025",
-      description: "Trova Old Amsterdam vicino a te. Disponibile in 341 negozi Coop e 23 Manor Food in Svizzera. Oro ai World Cheese Awards 2025 a Berna. Cerca per CAP o città per trovare il negozio più vicino a te.",
+      title: "Old Amsterdam, Gouda stagionato in Svizzera | Coop & Manor Food",
+      description: "Old Amsterdam: il Gouda stagionato dei Paesi Bassi, oro ai World Cheese Awards 2025 a Berna. Lo trovi da Coop e Manor Food in tutta la Svizzera.",
       keywords: "Old Amsterdam Svizzera, Old Amsterdam Coop, Old Amsterdam Manor Food, comprare Old Amsterdam Svizzera, Gouda stagionato Svizzera, trovare negozio formaggio, localizzatore negozi Svizzera, World Cheese Awards 2025, formaggio olandese Svizzera, Gouda premium Ticino"
     },
     hero: {
@@ -954,14 +990,14 @@ export const translations = {
       learnMore: "Scopri di Più Sulla Nostra Storia"
     },
     brandStory: {
-      title: "La Storia di Old Amsterdam",
-      paragraph1: "Quando lo Zuiderzee fu chiuso nel 1932, la famiglia Westland fu costretta ad abbandonare la vita da pescatori. Ispirati dai deliziosi formaggi che la madre riportava da Amsterdam, i giovani fratelli Westland aprirono un piccolo negozio di formaggi sul Lijnbaansgracht ad Amsterdam. Dopo una ricerca instancabile attraverso l'Europa, i fratelli ricrearono finalmente il gusto della loro giovinezza.",
-      paragraph2: "Old Amsterdam fu introdotto ufficialmente nel 1985. Questo formaggio unico divenne rapidamente un enorme successo tra gli amanti del formaggio nazionali e internazionali. La nostra distintiva ricetta di famiglia, combinata con un processo di maturazione di 8 mesi su scaffali di legno, crea i caratteristici cristalli croccanti e il sapore robusto che i conoscitori amano.",
-      paragraph3: "Oggi, Westland Kaas Groep BV distribuisce il formaggio Old Amsterdam in più di 60 paesi in tutto il mondo. In Svizzera, questo Gouda olandese premiato è ora disponibile da Coop e MANOR FOOD.",
-      summaryMobile: "Quando lo Zuiderzee fu chiuso nel 1932, i fratelli Westland si dedicarono alla produzione di formaggio. Dopo anni di perfezionamento, nel 1985 nacque Old Amsterdam — un Gouda premiato, amato in oltre 60 paesi, ora disponibile in Svizzera da Coop e MANOR FOOD.",
+      title: "La storia di Old Amsterdam",
+      paragraph1: "Nel 1932 la chiusura dello Zuiderzee costringe la famiglia Westland ad abbandonare la pesca. Ispirati dai deliziosi formaggi che la madre portava da Amsterdam, i giovani fratelli Westland aprono un piccolo negozio di formaggi sul Lijnbaansgracht, ad Amsterdam. Dopo una lunga ricerca in tutta Europa, ritrovano finalmente il gusto della loro giovinezza.",
+      paragraph2: "Old Amsterdam nasce ufficialmente nel 1985. Questo formaggio unico conquista subito gli amanti del formaggio di tutto il mondo. La nostra ricetta di famiglia, unita a una stagionatura di 8 mesi su assi di legno, dà i caratteristici cristalli croccanti e il sapore deciso che gli intenditori amano.",
+      paragraph3: "Oggi Westland Kaas Groep BV distribuisce Old Amsterdam in più di 60 Paesi. In Svizzera questo Gouda olandese premiato è ora disponibile da Coop e MANOR FOOD.",
+      summaryMobile: "Nel 1932, con la chiusura dello Zuiderzee, i fratelli Westland si dedicano al formaggio. Dopo anni di perfezionamento, nel 1985 nasce Old Amsterdam: un Gouda premiato, amato in oltre 60 Paesi e ora disponibile in Svizzera da Coop e MANOR FOOD.",
       readMore: "Leggi di più",
       readLess: "Mostra meno",
-      learnMore: "Scopri la Nostra Storia Completa"
+      learnMore: "Scopri tutta la nostra storia"
     },
     awards: {
       title: "Old Amsterdam trionfa ai World Cheese Awards 2025",
@@ -1033,13 +1069,17 @@ export const translations = {
       closeSearch: "Chiudi",
       storeCount: "5 negozi più vicini",
       buyOnline: "Acquista online su Coop.ch",
+      buyOnlineShort: "Acquista su Coop.ch",
       availabilityNote: "Disponibilità da verificare con il negozio",
       badgeWedge: "Pezzo 210g",
       badgeSlices: "Fette 115g",
       disclaimer: "Disponibilità basata sulle ultime informazioni disponibili. Per la disponibilità esatta in negozio, verificare direttamente con il punto vendita.",
       useMyLocation: "Usa la mia posizione",
       locating: "Rilevamento...",
-      locationDenied: "Accesso negato. Inserisci il CAP."
+      locationDenied: "Accesso negato. Inserisci il CAP.",
+      locationOutside: "Sembra che tu sia fuori dalla Svizzera. Torna in Svizzera e riprova!",
+      locationUnavailable: "Posizione non disponibile. Inserisci il CAP.",
+      yourLocation: "La tua posizione"
     },
     contact: {
       title: "Richieste all'Ingrosso",
@@ -1120,6 +1160,14 @@ export const translations = {
         dutchGoudaVsSwiss: {
           q: "Qual è la differenza tra Gouda olandese e Gouda svizzero?",
           a: "Il Gouda olandese tradizionale, come Old Amsterdam, è originario dei Paesi Bassi e segue tradizioni casearie secolari. Old Amsterdam utilizza una ricetta familiare segreta dal 1985, con un processo di stagionatura brevettato in tre fasi su scaffali di legno che produce cristalli croccanti caratteristici. Le varietà di Gouda svizzero sono prodotte localmente. Entrambi hanno i loro meriti, ma le medaglie d'Oro di Old Amsterdam ai World Cheese Awards 2025 a Berna confermano la sua qualità mondiale."
+        },
+        goudaVsGruyere: {
+          q: "Qual è la differenza tra Gouda e Gruyère?",
+          a: "Sono due formaggi diversi. Il Gouda viene dai Paesi Bassi: la cagliata viene lavata con acqua calda e ne risulta un formaggio più delicato e leggermente dolce, di solito da latte pastorizzato. Un Gouda stagionato come Old Amsterdam sviluppa note di caramello e cristalli croccanti. Le Gruyère AOP è un formaggio svizzero a pasta dura da latte crudo, prodotto nella Svizzera occidentale e stagionato almeno cinque mesi, dal gusto fruttato con note di nocciola. Il Gruyère è il classico per la fondue e i gratin; il Gouda stagionato è ideale per l'aperitivo, sul tagliere di formaggi o in un panino. Sullo stesso tagliere i due si completano molto bene."
+        },
+        lactose: {
+          q: "Il Gouda stagionato contiene lattosio?",
+          a: "Pochissimo. Il lattosio si degrada durante la stagionatura: più un formaggio matura, meno ne contiene. I formaggi Old Amsterdam sono quasi privi di lattosio. In caso di intolleranza, controlla le informazioni nutrizionali sulla confezione."
         },
         cheeseBoard: {
           q: "Come creare il tagliere di formaggi perfetto con Old Amsterdam?",

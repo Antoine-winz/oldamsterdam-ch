@@ -5,6 +5,7 @@ import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
 import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
+import { translations } from "../client/src/lib/i18n";
 
 const viteLogger = createLogger();
 
@@ -46,8 +47,8 @@ const LANG_META: Record<string, LangMeta> = {
   en: {
     lang: "en",
     locale: "en_CH",
-    title: "Old Amsterdam Switzerland – Find Your Nearest Coop or Manor Food Store | Gold WCA 2025",
-    description: "Find Old Amsterdam premium aged Gouda near you. Available at 341 Coop stores and 23 Manor Food stores across Switzerland. Gold winner at World Cheese Awards 2025. Search by postal code or town to find your closest store.",
+    title: "Old Amsterdam Aged Gouda in Switzerland | Coop & Manor Food",
+    description: "Old Amsterdam: aged Gouda from the Netherlands, Gold at the World Cheese Awards 2025 in Bern. Find it at Coop and Manor Food stores across Switzerland.",
     heroTitle: "Old Amsterdam: Now in Switzerland!",
     heroSubtitle: "Mature in flavor, young at heart.",
     heroBody: "Old Amsterdam is a mature Premium Gouda offering a uniquely intense taste and characteristic ripening crystals. The iconic aged cheese from the Netherlands is now available at Coop and MANOR FOOD. Gold winner at the World Cheese Awards 2025 in Bern, Switzerland.",
@@ -59,13 +60,13 @@ const LANG_META: Record<string, LangMeta> = {
     brandTitle: "The Old Amsterdam Story",
     brandBody: "Old Amsterdam was officially introduced in 1985. This unique cheese quickly became a massive success among domestic and international cheese lovers. Our distinctive family recipe, combined with an 8-month maturation process on wooden shelves, creates the characteristic crunchy crystals and robust flavor that cheese connoisseurs love. Today, Westland Kaas Groep BV distributes Old Amsterdam to more than 60 countries worldwide. In Switzerland, this award-winning Dutch Gouda is exclusively available at Coop and MANOR FOOD.",
     whereToBuyTitle: "Where to Buy",
-    whereToBuyBody: "Find Old Amsterdam at 341 Coop stores and 23 Manor Food stores across Switzerland. Search by postal code or town name to locate your nearest store.",
+    whereToBuyBody: "Find Old Amsterdam at 384 Coop stores and 23 Manor Food stores across Switzerland. Search by postal code or town name to locate your nearest store.",
   },
   fr: {
     lang: "fr",
     locale: "fr_CH",
-    title: "Old Amsterdam Suisse – Trouvez votre magasin Coop ou Manor Food le plus proche | Or WCA 2025",
-    description: "Trouvez Old Amsterdam près de chez vous. Disponible dans 341 magasins Coop et 23 Manor Food en Suisse. Médaillé d'Or aux World Cheese Awards 2025 à Berne. Recherchez par NPA ou ville pour trouver le magasin le plus proche.",
+    title: "Old Amsterdam, Gouda affiné en Suisse | Coop & Manor Food",
+    description: "Old Amsterdam : le Gouda affiné des Pays-Bas, médaillé d'or aux World Cheese Awards 2025 à Berne. Trouvez-le chez Coop et Manor Food partout en Suisse.",
     heroTitle: "Old Amsterdam : Désormais en Suisse !",
     heroSubtitle: "Mûr en saveur, jeune de cœur.",
     heroBody: "Old Amsterdam est un Gouda Premium affiné qui offre un goût unique intense et des cristaux de maturation caractéristiques. Le fromage affiné emblématique des Pays-Bas vous attend chez Coop et MANOR FOOD. Médaillé d'Or aux World Cheese Awards 2025 à Berne, Suisse.",
@@ -77,13 +78,13 @@ const LANG_META: Record<string, LangMeta> = {
     brandTitle: "L'Histoire d'Old Amsterdam",
     brandBody: "Old Amsterdam a été officiellement lancé en 1985. Ce fromage unique est rapidement devenu un grand succès auprès des amateurs de fromage dans le monde entier. Notre recette familiale distinctive, combinée à un processus de maturation de 8 mois sur des étagères en bois, crée les cristaux croquants caractéristiques et la saveur robuste que les connaisseurs adorent. Aujourd'hui disponible en Suisse exclusivement chez Coop et MANOR FOOD.",
     whereToBuyTitle: "Où Acheter",
-    whereToBuyBody: "Trouvez Old Amsterdam dans 341 magasins Coop et 23 Manor Food en Suisse. Recherchez par NPA ou nom de ville pour trouver le magasin le plus proche.",
+    whereToBuyBody: "Trouvez Old Amsterdam dans 384 magasins Coop et 23 Manor Food en Suisse. Recherchez par NPA ou nom de ville pour trouver le magasin le plus proche.",
   },
   de: {
     lang: "de",
     locale: "de_CH",
-    title: "Old Amsterdam Schweiz – Nächste Coop oder Manor Food Filiale finden | Gold WCA 2025",
-    description: "Finden Sie Old Amsterdam in Ihrer Nähe. Erhältlich in 341 Coop-Filialen und 23 Manor Food-Geschäften in der Schweiz. Goldgewinner bei den World Cheese Awards 2025 in Bern. PLZ oder Ort eingeben und nächste Filiale finden.",
+    title: "Old Amsterdam, gereifter Gouda in der Schweiz | Coop & Manor Food",
+    description: "Old Amsterdam: gereifter Gouda aus den Niederlanden, Gold an den World Cheese Awards 2025 in Bern. Jetzt bei Coop und Manor Food in der ganzen Schweiz finden.",
     heroTitle: "Old Amsterdam: Ab sofort in der Schweiz!",
     heroSubtitle: "Reif im Geschmack, jung im Herzen.",
     heroBody: "Old Amsterdam ist ein gereifter Premium Gouda mit einem einzigartig intensiven Geschmack und charakteristischen Reifekristallen. Der ikonische gereifte Käse aus den Niederlanden erwartet Sie bei Coop und MANOR FOOD. Goldgewinner bei den World Cheese Awards 2025 in Bern, Schweiz.",
@@ -95,13 +96,13 @@ const LANG_META: Record<string, LangMeta> = {
     brandTitle: "Die Geschichte von Old Amsterdam",
     brandBody: "Old Amsterdam wurde 1985 offiziell eingeführt. Dieser einzigartige Käse wurde schnell zu einem grossen Erfolg bei Käseliebhabern weltweit. Unser unverwechselbares Familienrezept, kombiniert mit einem 8-monatigen Reifeprozess auf Holzregalen, erzeugt die charakteristischen knackigen Kristalle und den kräftigen Geschmack. Heute in der Schweiz exklusiv erhältlich bei Coop und MANOR FOOD.",
     whereToBuyTitle: "Wo Kaufen",
-    whereToBuyBody: "Finden Sie Old Amsterdam in 341 Coop-Filialen und 23 Manor Food-Geschäften in der Schweiz. PLZ oder Ortsname eingeben, um die nächste Filiale zu finden.",
+    whereToBuyBody: "Finden Sie Old Amsterdam in 384 Coop-Filialen und 23 Manor Food-Geschäften in der Schweiz. PLZ oder Ortsname eingeben, um die nächste Filiale zu finden.",
   },
   it: {
     lang: "it",
     locale: "it_CH",
-    title: "Old Amsterdam Svizzera – Trova il tuo Coop o Manor Food più vicino | Oro WCA 2025",
-    description: "Trova Old Amsterdam vicino a te. Disponibile in 341 negozi Coop e 23 Manor Food in Svizzera. Oro ai World Cheese Awards 2025 a Berna. Cerca per CAP o città per trovare il negozio più vicino a te.",
+    title: "Old Amsterdam, Gouda stagionato in Svizzera | Coop & Manor Food",
+    description: "Old Amsterdam: il Gouda stagionato dei Paesi Bassi, oro ai World Cheese Awards 2025 a Berna. Lo trovi da Coop e Manor Food in tutta la Svizzera.",
     heroTitle: "Old Amsterdam: Ora in Svizzera!",
     heroSubtitle: "Maturo nel sapore, giovane di cuore.",
     heroBody: "Old Amsterdam è un Gouda Premium stagionato che offre un gusto unico e intenso e i caratteristici cristalli di maturazione. L'iconico formaggio stagionato dei Paesi Bassi ti aspetta da Coop e MANOR FOOD. Oro ai World Cheese Awards 2025 a Berna, Svizzera.",
@@ -113,7 +114,7 @@ const LANG_META: Record<string, LangMeta> = {
     brandTitle: "La Storia di Old Amsterdam",
     brandBody: "Old Amsterdam è stato ufficialmente introdotto nel 1985. Questo formaggio unico è rapidamente diventato un grande successo tra gli amanti del formaggio in tutto il mondo. La nostra distintiva ricetta di famiglia, abbinata a un processo di maturazione di 8 mesi su scaffali in legno, crea i caratteristici cristalli croccanti e il sapore robusto. Oggi disponibile in Svizzera esclusivamente da Coop e MANOR FOOD.",
     whereToBuyTitle: "Dove Acquistare",
-    whereToBuyBody: "Trova Old Amsterdam in 341 negozi Coop e 23 Manor Food in Svizzera. Cerca per CAP o nome della città per trovare il negozio più vicino.",
+    whereToBuyBody: "Trova Old Amsterdam in 384 negozi Coop e 23 Manor Food in Svizzera. Cerca per CAP o nome della città per trovare il negozio più vicino.",
   },
 };
 
@@ -164,7 +165,24 @@ function getLangFromPath(reqPath: string): string | null {
   return m ? m[1] : null;
 }
 
+// FAQ de la page (même source que le site : client/src/lib/i18n.ts).
+function getFaq(lang: string): { title: string; items: { q: string; a: string }[] } {
+  const t = translations[lang as keyof typeof translations] ?? translations.en;
+  return {
+    title: t.faq.title,
+    items: Object.values(t.faq.questions as Record<string, { q: string; a: string }>),
+  };
+}
+
 function buildStaticBody(meta: LangMeta, lang: string): string {
+  const faq = getFaq(lang);
+  const faqHtml = faq.items
+    .map((item) => `<div>
+            <h3>${escText(item.q)}</h3>
+            <p>${escText(item.a)}</p>
+          </div>`)
+    .join("\n          ");
+
   const otherLinks = (["en", "fr", "de", "it"] as const)
     .map((l) => `<a href="${BASE_URL}/${l}/" hreflang="${l}-ch">${l.toUpperCase()}</a>`)
     .join(" | ");
@@ -195,6 +213,11 @@ function buildStaticBody(meta: LangMeta, lang: string): string {
           <h2>${escText(meta.whereToBuyTitle)}</h2>
           <p>${escText(meta.whereToBuyBody)}</p>
         </section>
+        <section>
+          <h2>${escText(faq.title)}</h2>
+          ${faqHtml}
+        </section>
+        <p><a href="https://oldamsterdam.com">oldamsterdam.com</a></p>
         <nav aria-label="Language selection">
           ${otherLinks}
         </nav>
@@ -293,7 +316,21 @@ function injectLangMeta(html: string, lang: string): string {
     audience: { "@type": "Audience", geographicArea: { "@type": "Country", name: "Switzerland" } },
   };
   const webPageScript = `<script type="application/ld+json">${JSON.stringify(webPageLd).replace(/</g, "\\u003c")}</script>`;
-  html = html.replace("</head>", `    ${webPageScript}\n  </head>`);
+
+  // 15. JSON-LD FAQPage rendu côté serveur (lisible sans JavaScript, donc par les robots des IA).
+  // Même id que le script géré par LanguageHome.tsx : le client le met à jour, sans doublon.
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: meta.lang,
+    mainEntity: getFaq(lang).items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+  const faqScript = `<script type="application/ld+json" id="faq-jsonld">${JSON.stringify(faqLd).replace(/</g, "\\u003c")}</script>`;
+  html = html.replace("</head>", `    ${webPageScript}\n    ${faqScript}\n  </head>`);
 
   return html;
 }

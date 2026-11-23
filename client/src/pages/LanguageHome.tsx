@@ -23,6 +23,7 @@ export default function LanguageHome({ lang }: LanguageHomeProps) {
     const faqJsonLd = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
+      inLanguage: lang,
       mainEntity: faqQuestions.map(item => ({
         '@type': 'Question',
         name: item.q,

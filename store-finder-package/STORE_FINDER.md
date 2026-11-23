@@ -19,7 +19,7 @@ A fully working nearest-store finder with text search, GPS geolocation, retailer
 ```
 server/
   seed-stores.ts          ← creates the DB table and seeds store data on startup
-  stores-data.json        ← 341 Coop stores with lat/lon (large file, copy as-is)
+  stores-data.json        ← 384 Coop stores with lat/lon (large file, copy as-is)
   manor-stores-geocoded.json  ← 23 Manor Food stores with lat/lon
 
 client/src/components/
