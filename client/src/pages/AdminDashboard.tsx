@@ -65,6 +65,8 @@ interface AnalyticsData {
   summary: {
     totalViews: number; uniqueVisitors: number; todayViews: number; todayVisitors: number;
     yesterdayViews: number; last7Views: number; last30Views: number;
+    newsletterRate: string; contactRate: string; newVisitors: number; returningVisitors: number;
+    totalSubscribers: number; totalInquiries: number;
   };
   daily: { date: string; views: number; visitors: number }[];
   hourly: { hour: string; views: number }[];
@@ -73,6 +75,11 @@ interface AnalyticsData {
   pages: { name: string; count: number }[];
   devices: { name: string; count: number }[];
   browsers: { name: string; count: number }[];
+  countries: { name: string; count: number }[];
+  cities: { name: string; count: number }[];
+  utmSources: { name: string; count: number }[];
+  utmMediums: { name: string; count: number }[];
+  utmCampaigns: { name: string; count: number }[];
 }
 
 const CHART_COLORS = ["hsl(41, 58%, 63%)", "#60a5fa", "#34d399", "#f472b6", "#a78bfa", "#fb923c", "#facc15", "#e879f9"];
@@ -338,7 +345,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const visits = visitsQuery.data;
     if (!visits) return;
-    const uniqueIps = [...new Set(visits.map(v => v.ipAddress).filter(Boolean))] as string[];
+    const uniqueIps = Array.from(new Set(visits.map(v => v.ipAddress).filter(Boolean))) as string[];
     const unresolvedIps = uniqueIps.filter(ip => ipCache[ip] === undefined);
     if (unresolvedIps.length === 0) return;
     let cancelled = false;

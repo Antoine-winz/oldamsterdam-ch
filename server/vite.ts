@@ -133,6 +133,24 @@ function isKnownSpaPath(reqPath: string): boolean {
   return KNOWN_SPA_PATHS.has(reqPath);
 }
 
+// Choisit la langue du site d'après Accept-Language (ordre de préférence q=…).
+function pickLangFromAcceptLanguage(header: string | undefined): "en" | "fr" | "de" | "it" {
+  if (!header) return "en";
+  const ranked = header
+    .split(",")
+    .map((part) => {
+      const [tag, ...params] = part.trim().split(";");
+      const qParam = params.map((p) => p.trim()).find((p) => p.startsWith("q="));
+      const q = qParam ? parseFloat(qParam.slice(2)) : 1;
+      return { lang: tag.trim().toLowerCase().split("-")[0], q: isNaN(q) ? 0 : q };
+    })
+    .sort((a, b) => b.q - a.q);
+  for (const { lang } of ranked) {
+    if (lang === "fr" || lang === "de" || lang === "it" || lang === "en") return lang;
+  }
+  return "en";
+}
+
 function escAttr(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -261,6 +279,22 @@ function injectLangMeta(html: string, lang: string): string {
   const staticBody = buildStaticBody(meta, lang);
   html = html.replace('<div id="root"></div>', `${staticBody}\n    <div id="root"></div>`);
 
+  // 14. JSON-LD WebPage propre à la langue (les autres blocs JSON-LD restent en anglais)
+  const webPageLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": url,
+    url,
+    name: meta.title,
+    description: meta.description,
+    inLanguage: meta.lang,
+    isPartOf: { "@type": "WebSite", "@id": `${BASE_URL}/#website`, url: `${BASE_URL}/` },
+    about: { "@type": "Brand", name: "Old Amsterdam" },
+    audience: { "@type": "Audience", geographicArea: { "@type": "Country", name: "Switzerland" } },
+  };
+  const webPageScript = `<script type="application/ld+json">${JSON.stringify(webPageLd).replace(/</g, "\\u003c")}</script>`;
+  html = html.replace("</head>", `    ${webPageScript}\n  </head>`);
+
   return html;
 }
 
@@ -343,8 +377,11 @@ export function serveStatic(app: Express) {
 
   // Issue 1: Server-side redirect for bare domain — must be before express.static
   // so that static's default index.html serving for "/" doesn't intercept first.
-  app.get("/", (_req, res) => {
-    res.redirect(301, "/en/");
+  // La langue vient de l'en-tête Accept-Language du navigateur (fr, de, it, sinon en).
+  // 302 et non 301 : la destination dépend du navigateur.
+  app.get("/", (req, res) => {
+    res.vary("Accept-Language");
+    res.redirect(302, `/${pickLangFromAcceptLanguage(req.headers["accept-language"])}/`);
   });
 
   app.use(express.static(distPath));
@@ -353,6 +390,16 @@ export function serveStatic(app: Express) {
   // Note: req.path inside app.use("*") is always "/" — use req.originalUrl instead.
   app.use("*", (req, res) => {
     const reqPath = req.originalUrl.split("?")[0].split("#")[0];
+
+    // Lien cassé : pas de page 404 ; retour à la home (qui choisit la langue).
+    // Les fichiers manquants et l'API gardent un vrai 404.
+    if (!isKnownSpaPath(reqPath)) {
+      if (reqPath.startsWith("/api/") || reqPath.startsWith("/.well-known/") || path.extname(reqPath)) {
+        return res.status(404).type("text/plain").send("Not found");
+      }
+      return res.redirect(302, "/");
+    }
+
     const indexPath = path.resolve(distPath, "index.html");
 
     let html = fs.readFileSync(indexPath, "utf-8");

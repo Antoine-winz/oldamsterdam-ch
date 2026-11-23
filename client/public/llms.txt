@@ -1,47 +1,48 @@
-# Old Amsterdam Switzerland (oldamsterdam.ch)
+# Old Amsterdam Switzerland
 
-## About
-Old Amsterdam is a premium aged Gouda cheese brand from the Netherlands, made by Westland Kaas Groep BV. The cheese is known for its robust savory flavor, characteristic maturation crystals, and smooth sliceable texture. Old Amsterdam is aged on wooden shelves using a secret family recipe dating back to 1985.
+> Old Amsterdam is a premium aged Gouda cheese from the Netherlands (Westland Kaas Groep BV). In Switzerland it is sold at Coop and MANOR FOOD. The official Swiss website helps you find the nearest store by postal code or town. Website: https://oldamsterdam.ch
 
-## World Cheese Awards 2025
-Old Amsterdam triumphed at the World Cheese Awards 2025 held in Bern, Switzerland, where over 4,000 cheeses were blind-tasted by an international panel of experts. Awards received:
-- Old Amsterdam Classic: Gold
-- Old Amsterdam Goat: Gold
-- Old Amsterdam Reserve: Bronze
-Full article: https://oldamsterdam.com/news/old-amsterdam-triumphs-at-world-cheese-awards-2025/
+Old Amsterdam is matured on wooden shelves for about 8 months, which gives it its characteristic crunchy crystals and a robust, slightly sweet flavour. It has been made since 1985 and is sold in more than 60 countries. In Switzerland, NECTRA FOOD SA is the importer and distributor.
 
-## Swiss Market
-Old Amsterdam cheese is now available in Switzerland at Coop and MANOR FOOD. NECTRA FOOD SA (nectrafood.ch) is the exclusive importer and distributor of Old Amsterdam and Westland cheeses in Switzerland.
+## Swiss availability
+- Coop: 341 stores across Switzerland (per the Swiss website)
+- MANOR FOOD: 23 stores across Switzerland (per the Swiss website)
+- Find the nearest store: https://oldamsterdam.ch/en/#where-to-buy (search by postal code, town, or device location)
+- Online: Coop.ch search for Old Amsterdam: https://www.coop.ch/de/search/?text=old+amsterdam
 
-## Products Available in Switzerland
-- Old Amsterdam Classic Wedge (210g): Premium aged Gouda with characteristic crystals, sharp yet creamy flavor
-- Old Amsterdam Slices (115g, 10 slices): Convenient pre-sliced format, ideal for sandwiches and snacks
+## Products sold in Switzerland
+- Old Amsterdam Classic Wedge, 210 g: aged Gouda with crystals, sharp yet creamy.
+- Old Amsterdam Slices, 115 g (10 slices): pre-sliced aged Gouda for sandwiches and snacks.
 
-## Where to Buy
-- Coop supermarkets across Switzerland
-- MANOR FOOD departments across Switzerland
-- Available in Zurich, Geneva, Basel, Bern, Lausanne, and all major Swiss cities
+## Awards
+- World Cheese Awards 2025, Bern, Switzerland (over 4,000 cheeses blind-tasted):
+  - Old Amsterdam Classic: Gold
+  - Old Amsterdam Goat: Gold
+  - Old Amsterdam Reserve: Bronze
+- Source (official press release, November 2025): https://oldamsterdam.com/news/old-amsterdam-triumphs-at-world-cheese-awards-2025/
 
-## Languages
-This website is available in four Swiss languages:
-- English: https://oldamsterdam.ch/en/
-- German: https://oldamsterdam.ch/de/
-- French: https://oldamsterdam.ch/fr/
-- Italian: https://oldamsterdam.ch/it/
+## Pages
+- [Home (English)](https://oldamsterdam.ch/en/): products, story, store finder, FAQ
+- [Accueil (français)](https://oldamsterdam.ch/fr/): produits, histoire, points de vente, FAQ
+- [Startseite (Deutsch)](https://oldamsterdam.ch/de/): Produkte, Geschichte, Verkaufsstellen, FAQ
+- [Home (italiano)](https://oldamsterdam.ch/it/): prodotti, storia, punti vendita, FAQ
+- [Sitemap](https://oldamsterdam.ch/sitemap.xml)
 
-## Key Facts
-- Brand: Old Amsterdam
-- Type: Premium aged Gouda cheese
-- Origin: Netherlands (Dutch)
-- Aging: Average 8 months on wooden shelves
-- Awards: World Cheese Awards 2025 — 2x Gold, 1x Bronze (Bern, Switzerland)
-- Swiss Distributor: NECTRA FOOD SA (nectrafood.ch)
-- Swiss Retailers: Coop, MANOR FOOD
-- Parent Company: Westland Kaas Groep BV
-- Global Website: https://oldamsterdam.com
-- Swiss Website: https://oldamsterdam.ch
-- Last Updated: March 2026
+## FAQ (short answers)
+- What is Old Amsterdam? A premium aged Gouda from the Netherlands, matured about 8 months.
+- Where can I buy it in Switzerland? At Coop and MANOR FOOD stores; use the store finder on the website.
+- Who distributes it in Switzerland? NECTRA FOOD SA, exclusive importer for Old Amsterdam and Westland cheeses.
+- Is it Dutch Gouda or Swiss? It is Dutch Gouda, made in the Netherlands.
+
+## Résumé en français
+Old Amsterdam est un Gouda premium affiné, fabriqué aux Pays-Bas. En Suisse, il est vendu chez Coop (341 magasins) et MANOR FOOD (23 magasins). Le site https://oldamsterdam.ch/fr/ permet de trouver le magasin le plus proche par code postal ou localité.
+
+## Zusammenfassung auf Deutsch
+Old Amsterdam ist ein gereifter Premium-Gouda aus den Niederlanden. In der Schweiz ist er bei Coop (341 Filialen) und MANOR FOOD (23 Filialen) erhältlich. Auf https://oldamsterdam.ch/de/ finden Sie die nächste Filiale über Postleitzahl oder Ortschaft.
+
+## Riassunto in italiano
+Old Amsterdam è un Gouda premium stagionato dai Paesi Bassi. In Svizzera è disponibile da Coop (341 punti vendita) e MANOR FOOD (23 punti vendita). Su https://oldamsterdam.ch/it/ si trova il punto vendita più vicino tramite CAP o località.
 
 ## Contact
-For Swiss distribution inquiries: https://nectrafood.ch
-For brand information: https://oldamsterdam.com
+- Swiss distribution: NECTRA FOOD SA, https://nectrafood.ch
+- Brand information: https://oldamsterdam.com

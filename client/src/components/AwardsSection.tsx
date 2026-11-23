@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import awardsImage from '@assets/image_1770837377091.png';
+import awardsImage from '@assets/image_1770837377091.webp';
 import { getLocalizedUrl } from '@/lib/localeLinks';
 
 export default function AwardsSection() {

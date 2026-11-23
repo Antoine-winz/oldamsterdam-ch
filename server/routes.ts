@@ -23,6 +23,59 @@ function haversineKm(lat1: number, lon1: number, lat2: number, lon2: number): nu
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
+// ─── Magasins ─────────────────────────────────────────────────────────────────
+// Les magasins viennent de la base. Si la base ne répond pas (par exemple en local sans base),
+// on lit les listes du dépôt : server/stores-data.json (Coop) et server/manor-stores-geocoded.json (Manor Food).
+type StoreRow = {
+  id: number; debitor: string | null; name: string; city: string; region: string | null; format: string | null;
+  npa: string; address: string; full_address: string; phone: string | null;
+  has_wedge_210g: boolean; has_slices_115g: boolean;
+  latitude: number | null; longitude: number | null; retailer: string; availability_note: string | null;
+};
+
+let storeFileRows: StoreRow[] | null = null;
+let warnedStoreFallback = false;
+
+function loadStoresFromFiles(): StoreRow[] {
+  if (storeFileRows) return storeFileRows;
+  const dir = path.join(process.cwd(), "server");
+  const coop = JSON.parse(fs.readFileSync(path.join(dir, "stores-data.json"), "utf-8")) as any[];
+  const manor = JSON.parse(fs.readFileSync(path.join(dir, "manor-stores-geocoded.json"), "utf-8")) as any[];
+  const coopRows: StoreRow[] = coop.map((s, i) => ({
+    id: i + 1, debitor: s.debitor ?? null, name: s.name, city: s.city, region: s.region ?? null,
+    format: s.format ?? null, npa: s.npa, address: s.address, full_address: s.fullAddress,
+    phone: s.phone ?? null, has_wedge_210g: !!s.hasWedge210g, has_slices_115g: !!s.hasSlices115g,
+    latitude: s.latitude, longitude: s.longitude, retailer: "Coop", availability_note: null,
+  }));
+  // Même règle que server/seed-stores.ts : Manor Food propose les deux produits.
+  const manorRows: StoreRow[] = manor.map((s, i) => ({
+    id: 10000 + i, debitor: null, name: s.name, city: s.city, region: null, format: null,
+    npa: s.npa, address: s.street, full_address: `${s.street}, ${s.npa} ${s.city}, Suisse`,
+    phone: null, has_wedge_210g: true, has_slices_115g: true,
+    latitude: s.lat, longitude: s.lon, retailer: "Manor Food", availability_note: null,
+  }));
+  storeFileRows = [...coopRows, ...manorRows];
+  return storeFileRows;
+}
+
+async function loadStoreRows(retailer: string): Promise<StoreRow[]> {
+  const wanted = retailer === "coop" ? "Coop" : retailer === "manor" ? "Manor Food" : null;
+  try {
+    const { rows } = wanted
+      ? await pool.query("SELECT * FROM stores WHERE latitude IS NOT NULL AND longitude IS NOT NULL AND retailer = $1", [wanted])
+      : await pool.query("SELECT * FROM stores WHERE latitude IS NOT NULL AND longitude IS NOT NULL");
+    return rows;
+  } catch (e) {
+    if (!warnedStoreFallback) {
+      warnedStoreFallback = true;
+      console.warn("[stores] base indisponible : liste des magasins lue dans le dépôt");
+    }
+    return loadStoresFromFiles()
+      .filter(s => s.latitude != null && s.longitude != null)
+      .filter(s => !wanted || s.retailer === wanted);
+  }
+}
+
 async function resolveLocationToCoords(query: string): Promise<{ lat: number; lon: number; label: string } | null> {
   const q = encodeURIComponent(query.trim());
   const isNpa = /^\d{4}$/.test(query.trim());
@@ -151,7 +204,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/track", trackLimiter, async (req, res) => {
     try {
       const path = sanitizeString(req.body.path, 500) || '/';
-      const language = sanitizeString(req.body.language, 5);
+      const language = sanitizeString(req.body.language, 5) ?? undefined;
       const referrer = sanitizeString(req.body.referrer, 2000);
       const utmSource = sanitizeString(req.body.utmSource, 200) || null;
       const utmMedium = sanitizeString(req.body.utmMedium, 200) || null;
@@ -355,7 +408,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertContactInquirySchema.parse(req.body);
       const ipAddress = getClientIp(req);
-      const language = sanitizeString(req.body.language, 5);
+      const language = sanitizeString(req.body.language, 5) ?? undefined;
       const inquiry = await storage.createContactInquiry({ ...validatedData, ipAddress, language });
       res.status(201).json(inquiry);
     } catch (error: any) {
@@ -468,7 +521,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertNewsletterSubscriberSchema.parse(req.body);
       const ipAddress = getClientIp(req);
-      const language = sanitizeString(req.body.language, 5);
+      const language = sanitizeString(req.body.language, 5) ?? undefined;
       const subscriber = await storage.createNewsletterSubscriber({ ...validatedData, ipAddress, language });
       res.status(201).json(subscriber);
     } catch (error: any) {
@@ -637,7 +690,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const { rows } = await pool.query("SELECT * FROM stores ORDER BY name ASC");
       res.json(rows);
     } catch {
-      res.status(500).json({ error: "Failed to fetch stores" });
+      try {
+        res.json([...loadStoresFromFiles()].sort((a, b) => a.name.localeCompare(b.name)));
+      } catch {
+        res.status(500).json({ error: "Failed to fetch stores" });
+      }
     }
   });
 
@@ -674,17 +731,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         location = resolved;
       }
 
-      let sqlQuery = "SELECT * FROM stores WHERE latitude IS NOT NULL AND longitude IS NOT NULL";
-      const sqlParams: string[] = [];
-      if (retailer === "coop") {
-        sqlQuery += " AND retailer = $1";
-        sqlParams.push("Coop");
-      } else if (retailer === "manor") {
-        sqlQuery += " AND retailer = $1";
-        sqlParams.push("Manor Food");
-      }
-
-      const { rows } = await pool.query(sqlQuery, sqlParams);
+      const rows = await loadStoreRows(retailer);
       const withDist = rows.map((s: any) => ({
         ...s,
         distance: haversineKm(location.lat, location.lon, s.latitude, s.longitude),
@@ -697,27 +744,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  const CONTENT_LAST_MODIFIED = new Date().toISOString().split('T')[0];
+  // Date de dernière modification du contenu (à changer à chaque mise à jour du texte ou des visuels).
+  // Ne pas utiliser la date du jour : Google ignorerait une date qui change à chaque requête.
+  const SITE_CONTENT_DATE = "2026-11-23";
 
   app.get("/sitemap.xml", (_req, res) => {
-    const today = CONTENT_LAST_MODIFIED;
+    const base = "https://oldamsterdam.ch";
     const languages = ['en', 'de', 'fr', 'it'];
+    const images = [
+      { loc: `${base}/images/awards.webp`, title: "Old Amsterdam at the World Cheese Awards 2025, Bern" },
+      { loc: `${base}/images/wedge.webp`, title: "Old Amsterdam Classic Wedge 210g" },
+      { loc: `${base}/images/slices.webp`, title: "Old Amsterdam Slices 115g" },
+      { loc: `${base}/og-image.jpg`, title: "Old Amsterdam Switzerland" },
+    ];
+    const imageBlock = images.map(img => `
+    <image:image>
+      <image:loc>${img.loc}</image:loc>
+      <image:title>${img.title}</image:title>
+    </image:image>`).join('');
     const hreflangBlock = languages.map(lang =>
-      `    <xhtml:link rel="alternate" hreflang="${lang}-ch" href="https://oldamsterdam.ch/${lang}/"/>`
-    ).join('\n') + '\n    <xhtml:link rel="alternate" hreflang="x-default" href="https://oldamsterdam.ch/en/"/>';
+      `    <xhtml:link rel="alternate" hreflang="${lang}-ch" href="${base}/${lang}/"/>`
+    ).join('\n') + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${base}/"/>`;
 
     const urls = languages.map(lang => `
   <url>
-    <loc>https://oldamsterdam.ch/${lang}/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-${hreflangBlock}
+    <loc>${base}/${lang}/</loc>
+    <lastmod>${SITE_CONTENT_DATE}</lastmod>
+${hreflangBlock}${imageBlock}
   </url>`).join('');
 
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">${urls}
 </urlset>`;
 
     res.set('Content-Type', 'application/xml');
@@ -726,18 +785,30 @@ ${hreflangBlock}
   });
 
   app.get("/robots.txt", (_req, res) => {
+    // Robots pour les moteurs et les assistants IA (recherche et réponses). Le site est public :
+    // on autorise leur lecture ; seules l'administration et l'API restent fermées.
+    const privatePaths = ["/admin", "/admin/", "/api/", "/gateway", "/gateway/"];
+    const aiBots = [
+      "GPTBot", "OAI-SearchBot", "ChatGPT-User",
+      "ClaudeBot", "Claude-SearchBot", "Claude-User", "anthropic-ai",
+      "PerplexityBot", "Perplexity-User",
+      "Google-Extended", "Applebot-Extended", "CCBot",
+    ];
+    const group = (agents: string[]) =>
+      agents.map(a => `User-agent: ${a}`).join('\n') + '\nAllow: /\n' +
+      privatePaths.map(p => `Disallow: ${p}`).join('\n');
+
     const robotsTxt = `# robots.txt for oldamsterdam.ch
 
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /admin/
-Disallow: /api/
-Disallow: /gateway
-Disallow: /gateway/
+${privatePaths.map(p => `Disallow: ${p}`).join('\n')}
 
-# Sitemap
+${group(aiBots)}
+
+# Sitemap et résumé lisible par les IA
 Sitemap: https://oldamsterdam.ch/sitemap.xml
+# LLMs: https://oldamsterdam.ch/llms.txt
 `;
     res.set('Content-Type', 'text/plain');
     res.set('Cache-Control', 'public, max-age=3600');
